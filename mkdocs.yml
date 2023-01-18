@@ -15,7 +15,6 @@ copyright: Copyright &copy; 2022-2023 Lefebvre Sarrut
 # Configuration
 theme:
   name: material
-  custom_dir: docs/overrides
 
   palette:
 
