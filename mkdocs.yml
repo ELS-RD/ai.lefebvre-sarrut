@@ -63,8 +63,6 @@ theme:
 plugins:
   - search
   - tags
-  - minify:
-      minify_html: true
   - blog:
       pagination: true
       pagination_per_page: 10
