@@ -1,1 +1,96 @@
-site_name: My Docs
+# Project information
+site_name: IA Lefebvre Sarrut's engineering blog
+site_url: https://els-rd.github.io/ls-ai-blog/
+site_author: Lefebvre Sarrut
+site_description: >-
+  IA Lefebvre Sarrut's engineering blog 
+
+# Repository
+#repo_name: els-rd/ls-ai-blog
+#repo_url: https://github.com/ELS-RD/ls-ai-blog
+
+# Copyright
+copyright: Copyright &copy; 2022-2023 Lefebvre Sarrut
+
+# Configuration
+theme:
+  name: material
+  custom_dir: docs/overrides
+
+  palette:
+
+      # Palette toggle for light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          icon: material/weather-night
+          name: Switch to dark mode
+        primary: white
+        # accent: deep purple
+
+      # Palette toggle for dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          icon: material/weather-sunny
+          name: Switch to light mode
+        primary: black
+        # accent: deep purple
+
+  font:
+    text: Poppins
+    code: Roboto Mono
+
+  icon:
+    # repo: fontawesome/brands/github
+
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.path
+    - navigation.prune
+    - navigation.top
+    - navigation.footer
+
+    - toc.follow
+
+# Plugins
+plugins:
+  - search
+  - tags
+  - minify:
+      minify_html: true
+  - blog:
+      pagination: true
+      pagination_per_page: 10
+      # archive: false
+      # categories: false
+      categories_allowed:
+        - General
+        - LLM
+        - Performance
+        - Optimization
+
+# Customization
+extra:
+  homepage: blog    # logo targets the blog index.
+  generator: false  # remove made with material for mkdocs notice
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
+      name: squidfunk on Twitter
+    - icon: fontawesome/brands/reddit
+      link: https://twitter.com/squidfunk
+      name: squidfunk on Twitter
+    - icon: fontawesome/brands/medium
+      link: https://twitter.com/squidfunk
+      name: squidfunk on Twitter
+
+# Page tree
+nav:
+  - blog/index.md
