@@ -2,8 +2,6 @@
 
 ## Preview the static site locally
 
-test
-
 The easiest and least intrusive way is to use docker.
 
 ```shell
