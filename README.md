@@ -6,7 +6,7 @@ The easiest and least intrusive way is to use docker.
 
 ```shell
 # Pull the docker image from the private registry (you must have the rights)
-docker pull ghcr.io/els-rd/mkdocs-material-insiders:4.28.0
+docker pull ghcr.io/els-rd/mkdocs-material-insiders:4.28.1
 ```
 
 ```shell
