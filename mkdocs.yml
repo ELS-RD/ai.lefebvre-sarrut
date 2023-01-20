@@ -1,6 +1,6 @@
 # Project information
 site_name: IA Lefebvre Sarrut's Engineering Blog
-site_url: https://www.lefebvre-sarrut.eu/research/ai/blog
+site_url: https://www.research.lefebvre-sarrut.eu/blog
 site_author: Lefebvre Sarrut
 site_description: >-
   Lefebvre Sarrut's AI research publication blog
@@ -94,13 +94,14 @@ plugins:
       draft_on_serve: true # drafts are previewable
       draft_if_future_date: false
 
-  - search
-
   - tags:
       tags_file: tags.md
       tags_allowed:
         - T5
         - kernel
+
+  - typeset # preserves html formatting in the navigation and t.o.c
+  - search
 
 # Customization
 extra:
