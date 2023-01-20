@@ -76,10 +76,9 @@ plugins:
       categories_url_format: "category/{slug}"
       categories_toc: false
       categories_allowed:
-        - General
-        - Performance
+        - Machine Learning
+        - Transformers
         - Optimization
-        - LLM
 
       pagination: true
       pagination_per_page: 10
@@ -97,8 +96,10 @@ plugins:
   - tags:
       tags_file: tags.md
       tags_allowed:
+        - Bert
         - T5
-        - kernel
+        - Kernel
+        - OpenAI Triton
 
   - typeset # preserves html formatting in the navigation and t.o.c
   - search
