@@ -118,6 +118,11 @@ extra:
       link: https://twitter.com/squidfunk
       name: squidfunk on Twitter
 
+# Extensions
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
 # Page tree
 nav:
   - index.md  # defined as standalone blog.
