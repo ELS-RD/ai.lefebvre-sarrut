@@ -88,8 +88,8 @@ plugins:
       authors: true
       authors_file: .authors.yml
 
-      draft: true
-      draft_on_serve: true
+      draft: false  # drafts are not published
+      draft_on_serve: true # drafts are previewable
       draft_if_future_date: false
 
   - search
