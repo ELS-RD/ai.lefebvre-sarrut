@@ -88,6 +88,10 @@ plugins:
       authors: true
       authors_file: .authors.yml
 
+      draft: true
+      draft_on_serve: true
+      draft_if_future_date: false
+
   - search
   - tags
 
