@@ -56,6 +56,7 @@ theme:
 
 # Plugins
 plugins:
+
   - blog:
       blog_dir: . # defined as standalone blog.
 
@@ -93,7 +94,12 @@ plugins:
       draft_if_future_date: false
 
   - search
-  - tags
+
+  - tags:
+      tags_file: tags.md
+      tags_allowed:
+        - T5
+        - kernel
 
 # Customization
 extra:
@@ -112,3 +118,4 @@ extra:
 # Page tree
 nav:
   - index.md  # defined as standalone blog.
+  # - tags.md # if you want an entry in the navigation
