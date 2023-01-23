@@ -58,6 +58,7 @@ theme:
     - content.code.copy # code copy button enabled globally
     - content.code.annotate # code annotations enabled globally
     - content.tabs.link
+    - content.tooltips
 
 # Plugins
 plugins:
