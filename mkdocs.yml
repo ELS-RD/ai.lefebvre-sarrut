@@ -107,7 +107,7 @@ plugins:
 
   - typeset # preserves html formatting in the navigation and t.o.c
   - search
-  - glightbox
+  - glightbox # image zoom functionality plugin
 
 # Customization
 extra:
