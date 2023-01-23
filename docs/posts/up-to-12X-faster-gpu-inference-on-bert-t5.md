@@ -5,13 +5,13 @@ authors:
   - mbenesty
 categories:
     - Machine Learning
-    - Transformers
     - Optimization
+    - Transformers
 tags:
     - Bert
-    - T5
     - Kernel
     - OpenAI Triton
+    - T5
 links:
     - Project link: https://github.com/ELS-RD/kernl/
     - E2E demo notebooks:
