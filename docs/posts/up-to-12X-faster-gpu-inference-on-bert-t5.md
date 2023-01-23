@@ -32,7 +32,7 @@ This has been possible because we wrote custom GPU kernels with the new OpenAI p
 <!-- more -->
 
 <figure markdown>
-  ![Speedup over Hugging Face baseline](up-to-12X-faster-gpu-inference-on-bert-t5/speedup-over-hugging-face-baseline.webp){ width="100%" }
+  ![Speedup over Hugging Face baseline](up-to-12X-faster-gpu-inference-on-bert-t5/speedup-over-hugging-face-baseline.webp){ width="100%", loading=lazy }
   <figcaption>Benchmarks ran on a 3090 RTX GPU, 12 cores Intel CPU, more info below</figcaption>
 </figure>
 
