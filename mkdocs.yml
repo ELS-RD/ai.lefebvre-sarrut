@@ -103,6 +103,7 @@ plugins:
       tags_file: tags.md
       tags_allowed:
         - Bert
+        - Hugging Face
         - Kernel
         - ONNX Runtime
         - OpenAI Triton
