@@ -107,6 +107,7 @@ plugins:
 
   - typeset # preserves html formatting in the navigation and t.o.c
   - search
+  - glightbox
 
 # Customization
 extra:
