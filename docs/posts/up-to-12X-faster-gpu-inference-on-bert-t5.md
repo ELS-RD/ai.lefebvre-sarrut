@@ -86,11 +86,49 @@ In particular [Flash attention](https://github.com/HazyResearch/flash-attention)
 
 As you can see, CUDA graphs erase all CPU overhead (Python related for instance), 
 sometimes there is no need to rely on C++/Rust to be fast! Fused kernels (in CUDA or Triton) are mostly important for longer input sequence lengths. 
-We are aware that there are still some low hanging fruits to improve Kernl performance without sacrificing output precision, 
-it’s just the first release. More info about how it works here.
+We are aware that there are still some low hanging fruits to improve **[Kernl](https://github.com/ELS-RD/kernl/)** performance without sacrificing output precision, 
+it’s just the first release. More info about how it works [here](https://github.com/ELS-RD/kernl#how).
 
-## Lorem ipsum dolor sit amet
+## Why?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-massa, nec semper lorem quam in massa.
+We work for Lefebvre Sarrut, a leading European legal publisher. 
+Several of our products include transformer models in latency sensitive scenarios (search, content recommendation). 
+So far, ONNX Runtime and TensorRT served us well, and we learned interesting patterns along the way that we shared with the community through an open-source library called [transformer-deploy](https://github.com/ELS-RD/transformer-deploy). 
+However, recent changes in our environment made our needs evolve:
+
+- New teams in the group are deploying transformer models in prod directly with PyTorch. 
+ONNX Runtime poses them too many challenges (like debugging precision issues in fp16). 
+With its inference expert-oriented API, TensorRT was not even an option;
+- We are exploring applications of large generative language models in legal industry, 
+and we need easier dynamic behavior support plus more efficient quantization, 
+our creative approaches for that purpose [we shared on Reddit](https://www.reddit.com/r/MachineLearning/comments/uwkpmt/p_what_we_learned_by_making_t5large_2x_faster/) proved to be more fragile than we initially thought;
+- New business opportunities if we were able to train models supporting large contexts (>5K tokens)
+
+On a more personal note, I enjoyed much more writing kernels and understanding low level computation of transformers than mastering multiple complicated tools API and their environments. 
+It really changed my intuitions and understanding about how the model works, scales, etc. 
+It’s not just OpenAI Triton, we also did some prototyping on C++ / CUDA / Cutlass and the effect was the same, it’s all about digging to a lower level. 
+And still the effort is IMO quite limited regarding the benefits. 
+If you have some interest in machine learning engineering, you should probably give those tools a try.
+
+## Future?
+
+Our road map includes the following elements (in no particular order):
+
+- Faster warmup
+- Ragged inference (no computation lost in padding)
+- Training support (with long sequences support)
+- Multi GPU (multiple parallelization schemas support)
+- Quantization (PTQ)
+- New batch of Cutlass kernels tests
+- Improve hardware support (>= Ampere for now)
+- More tuto
+
+Regarding training, if you want to help, we have written an issue with all the required pointers, 
+it should be very doable: [https://github.com/ELS-RD/kernl/issues/93](https://github.com/ELS-RD/kernl/issues/93)
+
+On top of speed, one of the main benefits is the support of very long sequences (16K tokens without changing attention formula) as it’s based on [Flash Attention](https://github.com/HazyResearch/flash-attention).
+
+Also, note that future version of PyTorch will include [Inductor](https://dev-discuss.pytorch.org/t/torchinductor-a-pytorch-native-compiler-with-define-by-run-ir-and-symbolic-shapes/747). 
+It means that all PyTorch users will have the option to compile to Triton to get around [1.7X faster training](https://dev-discuss.pytorch.org/t/torchinductor-update-3-e2e-model-training-with-torchdynamo-inductor-gets-1-67x-2-1x-speedup/793).
+
+A big thank you to Nvidia people who advised us during this project.
