@@ -26,10 +26,10 @@ With 1 line of code we applied the optimizations and made Bert up to 12X faster 
 T5 is also covered in this first release (> 6X speed up generation and we are still halfway in the optimizations!). 
 This has been possible because we wrote custom GPU kernels with the new OpenAI programming language Triton and leveraged TorchDynamo.
 
+<!-- more -->
+
 - **[Project link](https://github.com/ELS-RD/kernl/)**
 - E2E demo notebooks: **[XNLI classification](https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb)**, **[T5 generation](https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb)**
-
-<!-- more -->
 
 <figure markdown>
   ![Speedup over Hugging Face baseline](up-to-12X-faster-gpu-inference-on-bert-t5/speedup-over-hugging-face-baseline.webp){ width="100%", loading=lazy }
