@@ -14,7 +14,7 @@ div[data-md-component="header-title"] {
     font-family: 'Exo', sans-serif;
     font-weight: 400;
     line-height: normal;
-    padding: 18px;
+    padding-top: 18px;
 }
 
 /* rounds up the search field and the suggestion panel */
