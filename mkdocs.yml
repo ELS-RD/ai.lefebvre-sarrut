@@ -1,6 +1,6 @@
 # Project information
-site_name: IA Lefebvre Sarrut's blog
-site_url: https://www.research.lefebvre-sarrut.eu/blog
+site_name: Lefebvre Sarrut A.I
+site_url: https://www.ai.lefebvre-sarrut.eu/blog
 site_author: Lefebvre Sarrut
 site_description: >-
   Lefebvre Sarrut's AI research blog
@@ -129,6 +129,9 @@ extra:
 #    - icon: fontawesome/brands/medium
 #      link: https://twitter.com/squidfunk
 #      name: squidfunk on Twitter
+
+extra_css:
+  - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/mathjax.js

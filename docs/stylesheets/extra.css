@@ -1,0 +1,28 @@
+/* ----- ----- ----- ----- ----- */
+/* additional fonts */
+/* ----- ----- ----- ----- ----- */
+@font-face {
+    font-family: "Exo";
+    src: url("../assets/fonts/Exo-VariableFont_wght.ttf") format("truetype");
+    /*font-display: swap; causes clipping + movement on loading */
+}
+
+/* ----- ----- ----- ----- ----- */
+/* customization */
+/* ----- ----- ----- ----- ----- */
+div[data-md-component="header-title"] {
+    font-family: 'Exo', sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    padding: 18px;
+}
+
+/* rounds up the search field and the suggestion panel */
+/*form[name="search"] {*/
+/*    border-radius: var(--border-radius-md) !important;*/
+/*}*/
+
+/*div[class="md-search__scrollwrap"] {*/
+/*    margin-top: 4px;*/
+/*    border-radius: var(--border-radius-md) !important;*/
+/*}*/
