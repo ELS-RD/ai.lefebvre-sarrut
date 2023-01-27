@@ -178,4 +178,4 @@ markdown_extensions:
 # Page tree
 nav:
   - index.md  # defined as standalone blog.
-  # - tags.md # if you want an entry in the navigation
+  - Tags: tags.md # if you want an entry in the navigation
