@@ -34,7 +34,7 @@ theme:
         # accent: deep purple
 
   font:
-    text: OpenSans
+    text: Roboto
     code: Roboto Mono
 
   icon:
