@@ -1,5 +1,5 @@
 # Project information
-site_name: Lefebvre Sarrut A.I
+site_name: Lefebvre Sarrut AI
 site_url: https://www.ai.lefebvre-sarrut.eu
 site_author: Lefebvre Sarrut
 site_description: >-
@@ -179,4 +179,4 @@ markdown_extensions:
 # Page tree
 nav:
   - index.md  # defined as standalone blog.
-  - Tags: tags.md # if you want an entry in the navigation
+  # - Tags: tags.md # if you want an entry in the navigation
