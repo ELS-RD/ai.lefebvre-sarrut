@@ -126,6 +126,10 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://fr.linkedin.com/company/els-group
       name: Lefebvre Sarrut on Linkedin
+    - icon: simple/maildotru
+      link: mailto:rd-feedback@lefebvre-sarrut.eu
+      name: Contact us
+
 
 extra_css:
   - stylesheets/extra.css
