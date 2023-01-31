@@ -115,7 +115,7 @@ article.md-content__inner h1 {
     align-items: center;
     gap: var(--spacing-sm);
 
-    padding: 56px 16px 80px;
+    padding: 56px 16px 88px;
 
     background-color: var(--palette-mauve-1);
     background-image: linear-gradient(135deg, var(--palette-mauve-1) 0%, var(--palette-mauve-2) 100%);
