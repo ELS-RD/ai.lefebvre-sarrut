@@ -49,6 +49,7 @@
 [data-md-color-scheme=slate][data-md-color-primary=deep-purple] {
     /*black: --md-typeset-a-color: #6c91d5; is the default color */
     --md-typeset-a-color: #6c91d5; /* default: a682e3 */
+    --md-primary-fg-color: #6301C3; /* default: 7e56c2 */
 }
 
 /* ----- ----- ----- ----- ----- */
