@@ -22,7 +22,7 @@ theme:
           icon: material/brightness-4
           name: Switch to dark mode
         primary: white
-        # accent: deep purple
+        accent: deep purple
 
       # Palette toggle for dark mode
       - media: "(prefers-color-scheme: dark)"
@@ -30,15 +30,14 @@ theme:
         toggle:
           icon: material/brightness-7
           name: Switch to light mode
-        primary: black
-        # accent: deep purple
+        primary: deep purple # old: black
+        accent: deep purple
 
   font:
-    text: Roboto
+    text: Quicksand # Fredoka | Lexend | Lexend Deca | Outfit | Quicksand | Questrial | Poppins
     code: Roboto Mono
 
   icon:
-    # repo: fontawesome/brands/github
      logo: lefebvre-sarrut/logo
 
   features:

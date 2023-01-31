@@ -4,25 +4,153 @@
 @font-face {
     font-family: "Exo";
     src: url("../assets/fonts/Exo-VariableFont_wght.ttf") format("truetype");
-    /*font-display: swap; causes clipping + movement on loading */
+    font-display: swap;
+}
+
+/* ----- ----- ----- ----- ----- */
+/* variables */
+/* ----- ----- ----- ----- ----- */
+:root {
+    /* custom */
+    --palette-primary-blue: #061A9D;
+    --palette-primary-red: #EA0F30;
+    --palette-mauve-1: #4000c1;
+    --palette-mauve-2: #c600c9;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-xxl: 32px;
+    --spacing-xxxl: 64px;
+
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
 }
 
 /* ----- ----- ----- ----- ----- */
 /* customization */
 /* ----- ----- ----- ----- ----- */
+/* note: colors are relative to the configuration > theme:palette:primary */
+/* overrides light colors */
+[data-md-color-scheme="default"][data-md-color-primary=white] {
+    --md-typeset-a-color: var(--palette-primary-blue); /* default: #4051b5 */
+}
+
+/* overrides dark colors */
+[data-md-color-scheme=slate][data-md-color-primary=deep-purple] {
+    /*black: --md-typeset-a-color: #6c91d5; is the default color */
+    --md-typeset-a-color: #6c91d5; /* default: a682e3 */
+}
+
+/* ----- ----- ----- ----- ----- */
 div[data-md-component="header-title"] {
     font-family: 'Exo', sans-serif;
     font-weight: 400;
     line-height: normal;
-    padding-top: 20px;
+    padding-top: 20px; /* non-standardized value */
 }
 
+/* ----- ----- ----- ----- ----- */
 /* rounds up the search field and the suggestion panel */
-/*form[name="search"] {*/
-/*    border-radius: var(--border-radius-md) !important;*/
-/*}*/
+form[name="search"] {
+    border-radius: var(--border-radius-sm) !important;
+}
 
-/*div[class="md-search__scrollwrap"] {*/
-/*    margin-top: 4px;*/
-/*    border-radius: var(--border-radius-md) !important;*/
-/*}*/
+div[class="md-search__output"] {
+    margin-top: 1px; /* non-standardized value */
+    border-radius: var(--border-radius-sm) !important;
+}
+
+/* ----- ----- ----- ----- ----- */
+/* blog index title */
+div.md-content__inner > header > h1  {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* blog index post */
+div.md-content__inner > article.md-post {
+    padding: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+    border-left: 1px solid var(--palette-mauve-2);
+    box-shadow: var(--md-shadow-z1); /* uses the parent design system */
+}
+
+div.md-content__inner > article.md-post:hover {
+    box-shadow: var(--md-shadow-z2); /* uses the parent design system */
+}
+
+div.md-content__inner > article.md-post > div.md-post__content h2 {
+    font-family: 'Exo', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* article */
+article.md-content__inner h1 {
+    font-family: 'Exo', sans-serif;
+    font-weight: 400;
+}
+
+/* ----- ----- ----- ----- ----- */
+/* blog index */
+/* ----- ----- ----- ----- ----- */
+.blog-index_hero {
+    position: relative;
+
+    margin-bottom: clamp(2rem, 1.273rem + 3.64vw, 4rem); /* min:32px / max:64px */
+    padding-bottom: 32px;
+
+    background: rgba(64, 0, 193, 0.40);
+    border-radius: var(--border-radius-sm);
+}
+
+.blog-index_hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    padding: 56px 16px 80px;
+
+    background-color: var(--palette-mauve-1);
+    background-image: linear-gradient(135deg, var(--palette-mauve-1) 0%, var(--palette-mauve-2) 100%);
+
+    border-radius: var(--border-radius-sm);
+}
+
+.blog-index_hero h1,
+.blog-index_hero h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+}
+
+.blog-index_hero h1 {
+    font-weight: 700;
+}
+
+.blog-index_hero h2 {
+    color: var(--md-typeset-color); /* uses the parent design system */
+}
+
+.blog-index_hero__logo {
+    position: absolute;
+    margin: 0;
+    padding: 32px 40px 12px;
+    line-height: 0;
+    bottom: 0;
+    clip-path: path("M.176 90A85.775 85.775 0 0 1 0 84.5C0 37.832 37.832 0 84.5 0S169 37.832 169 84.5c0 1.848-.059 3.682-.176 5.5H.176Z");
+    background: rgba(255, 255, 255, .88);
+}
+
+.blog-index_hero__logo svg {
+    width: 89px;
+    height: 46px;
+}
+
