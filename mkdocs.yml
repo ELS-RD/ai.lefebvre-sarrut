@@ -119,16 +119,13 @@ plugins:
 # Customization
 extra:
   generator: false  # remove "made with material for mkdocs" notice.
-#  social:
-#    - icon: fontawesome/brands/twitter
-#      link: https://twitter.com/squidfunk
-#      name: squidfunk on Twitter
-#    - icon: fontawesome/brands/reddit
-#      link: https://twitter.com/squidfunk
-#      name: squidfunk on Twitter
-#    - icon: fontawesome/brands/medium
-#      link: https://twitter.com/squidfunk
-#      name: squidfunk on Twitter
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/LefebvreSarrut
+      name: Lefebvre Sarrut on Twitter
+    - icon: fontawesome/brands/linkedin
+      link: https://fr.linkedin.com/company/els-group
+      name: Lefebvre Sarrut on Linkedin
 
 extra_css:
   - stylesheets/extra.css
