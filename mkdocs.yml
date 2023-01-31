@@ -6,7 +6,7 @@ site_description: >-
   Lefebvre Sarrut's AI research blog
 
 # Copyright
-copyright: Copyright &copy; 2022-2023 Lefebvre Sarrut
+copyright: Copyright &copy; 2022-2023 <a href="https://www.lefebvre-sarrut.eu/" target="_blank" rel="noopener">Lefebvre Sarrut</a>
 
 # Configuration
 theme:
