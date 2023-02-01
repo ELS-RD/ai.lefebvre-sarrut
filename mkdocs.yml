@@ -116,6 +116,12 @@ plugins:
   - search
   - glightbox # image zoom functionality plugin
 
+  - privacy:
+      external_links: true
+      external_links_attr_map:
+        target: _blank
+      external_links_noopener: true
+
 # Customization
 extra:
   generator: false  # remove "made with material for mkdocs" notice.
