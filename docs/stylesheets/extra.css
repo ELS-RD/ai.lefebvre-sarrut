@@ -130,7 +130,9 @@ article.md-content__inner h1 {
 
     padding: 56px 16px 88px;
 
-    background: url("../assets/images/neural-network.svg") no-repeat center right;
+    background: url("../assets/images/neural-network.svg") no-repeat;
+    background-position-x: -32px;
+    background-position-y: center;
 
     border-radius: var(--border-radius-sm);
 }
