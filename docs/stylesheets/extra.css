@@ -1,9 +1,3 @@
-/*
-    2. change the link in the posts
-    4. create the 404
-    4. change the cursor
-*/
-
 /* ----- ----- ----- ----- ----- */
 /* additional fonts */
 /* ----- ----- ----- ----- ----- */
@@ -22,6 +16,7 @@
     --palette-primary-red: #EA0F30;
     --palette-mauve-1: #4000c1;
     --palette-mauve-2: #c600c9;
+    --palette-mauve-3: #6301C3;
 
     --spacing-xs: 4px;
     --spacing-sm: 8px;
@@ -49,7 +44,7 @@
 [data-md-color-scheme=slate][data-md-color-primary=deep-purple] {
     /*black: --md-typeset-a-color: #6c91d5; is the default color */
     --md-typeset-a-color: #6c91d5; /* default: a682e3 */
-    --md-primary-fg-color: #6301C3; /* default: 7e56c2 */
+    --md-primary-fg-color: var(--palette-mauve-3); /* default: 7e56c2 */
 }
 
 /* ----- ----- ----- ----- ----- */
@@ -166,5 +161,43 @@ article.md-content__inner h1 {
 .blog-index_hero__logo svg {
     width: 89px;
     height: 46px;
+}
+
+/* ----- ----- ----- ----- ----- */
+/* 404 page */
+/* ----- ----- ----- ----- ----- */
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--md-shadow-z1); /* uses the parent design system */
+}
+
+.not-found > h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.not-found > img {
+    max-height: 400px;
+}
+
+.not-found > .go-back {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.not-found > .go-back > svg {
+    width: 18px;
+    fill: var(--md-typeset-color);
 }
 
