@@ -106,6 +106,7 @@ plugins:
         - Bert
         - Hugging Face
         - Kernel
+        - Nvidia Triton
         - ONNX Runtime
         - OpenAI Triton
         - T5
