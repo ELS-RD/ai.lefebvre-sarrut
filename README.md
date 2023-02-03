@@ -1,4 +1,4 @@
-# Lefebvre Sarrut AI Blog
+# Lefebvre Sarrut's AI blog
 
 ## Material for MkDocs Insiders version
 

@@ -1,5 +1,5 @@
 # Project information
-site_name: Lefebvre Sarrut AI
+site_name: Lefebvre Sarrut's AI blog
 site_url: https://www.ai.lefebvre-sarrut.eu
 site_author: Lefebvre Sarrut
 site_description: >-
@@ -104,6 +104,7 @@ plugins:
       tags_file: tags.md
       tags_allowed:
         - Bert
+        - Cuda
         - Hugging Face
         - Kernel
         - Nvidia Triton
