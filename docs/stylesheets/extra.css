@@ -155,7 +155,7 @@ article.md-content__inner h1 {
     line-height: 0;
     bottom: 0;
     clip-path: path("M.176 90A85.775 85.775 0 0 1 0 84.5C0 37.832 37.832 0 84.5 0S169 37.832 169 84.5c0 1.848-.059 3.682-.176 5.5H.176Z");
-    background: rgba(255, 255, 255, .80);
+    background: rgba(255, 255, 255, 1);
 }
 
 .blog-index_hero__logo svg {
