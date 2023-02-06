@@ -83,8 +83,10 @@ plugins:
       categories_toc: false
       categories_allowed:
         - Benchmarking
+        - Kernl
         - Machine Learning
         - Optimization
+        - Transformer-Deploy
         - Transformers
 
       pagination: true
