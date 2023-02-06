@@ -105,6 +105,7 @@ plugins:
       tags_allowed:
         - Bert
         - Cuda
+        - GPU Quantization
         - Hugging Face
         - Kernel
         - Nvidia Triton
