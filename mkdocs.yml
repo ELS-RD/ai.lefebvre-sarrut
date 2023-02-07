@@ -107,12 +107,17 @@ plugins:
       tags_allowed:
         - Bert
         - Cuda
+        - Deep Learning
         - GPU Quantization
         - Hugging Face
         - Kernel
+        - Machine Learning
+        - NLP
         - Nvidia Triton
         - ONNX Runtime
         - OpenAI Triton
+        - Python
+        - Pytorch
         - T5
         - TensorRT
         - TorchDynamo
