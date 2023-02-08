@@ -1,17 +1,16 @@
 ---
-draft: true
+draft: false
 date: 2021-11-05
 authors:
 - mbenesty
 categories:
-- Machine Learning
-- Optimization
 - Transformers
 tags:
-- Bert
-- Kernel
-- OpenAI Triton
-- T5
+- Deep Dives
+- Hugging Face
+- Notes From Industry
+- ONNX Runtime
+- Transformers
 links:
 - Tranformer-deploy: https://github.com/ELS-RD/transformer-deploy
 ---

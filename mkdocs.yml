@@ -84,8 +84,10 @@ plugins:
       categories_allowed:
         - Benchmarking
         - Kernl
+        - Justice
         - Machine Learning
         - Optimization
+        - Pytorch
         - Transformer-Deploy
         - Transformers
 
@@ -107,12 +109,14 @@ plugins:
       tags_allowed:
         - Bert
         - Cuda
+        - Deep Dives
         - Deep Learning
         - GPU Quantization
         - Hugging Face
         - Kernel
         - Machine Learning
         - NLP
+        - Notes From Industry
         - Nvidia Triton
         - ONNX Runtime
         - OpenAI Triton
@@ -121,6 +125,7 @@ plugins:
         - T5
         - TensorRT
         - TorchDynamo
+        - Transformers
 
   - typeset # preserves html formatting in the navigation and t.o.c
   - search

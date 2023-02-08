@@ -4,9 +4,7 @@ date: 2020-05-20
 authors:
 - mbenesty
 categories:
-- Benchmarking
-- Optimization
-- Transformers
+- Pytorch
 tags:
 - Deep Learning
 - Hugging Face
