@@ -376,7 +376,7 @@ as and ONNX Runtime alone (CUDA provider) performs a good job quite similar to T
 
 These results should not surprise us as it seems we are using the same tooling than Hugging Face.
 
-<!-- the image is no longer accessible on the original article -->
+<!--image is missing-->
 
 ## 🍎 vs 🍎: 1st try, ORT+FastAPI vs Hugging Face Infinity
 
