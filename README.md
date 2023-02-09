@@ -5,7 +5,7 @@
 To avoid any breaking change, we target a specific version.
 
 For the preview ([`Dockerfile`](Dockerfile)),
-and in the Github Action workflow ([`.github/workflows/deploy-static-site.yml`](.github/workflows/deploy-static-site.yml))
+and in the Github Action workflow ([`deploy-static-site.yml`](.github/workflows/deploy-static-site.yml))
 
 ### How to upgrade version
 
