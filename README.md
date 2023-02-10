@@ -21,6 +21,8 @@ consulting [How to upgrade](https://squidfunk.github.io/mkdocs-material/upgrade/
 
 The easiest and least intrusive way is to use docker.
 
+> Nota ❗: You need to be logged in to github to pull the image (see [docker login](https://docs.docker.com/engine/reference/commandline/login/)).
+
 ```shell
 # Building a Material for MkDocs docker image with the non built-in plugins
 docker build -t mkdocs-material-insiders-plugins -f Dockerfile docs
