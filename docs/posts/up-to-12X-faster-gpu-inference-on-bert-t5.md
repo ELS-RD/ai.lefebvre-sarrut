@@ -17,7 +17,6 @@ links:
 - E2E demo notebooks:
   - XNLI classification: https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb
   - T5 generation: https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb
-comments: true 
 ---
 
 # Up to 12X faster GPU inference on Bert, T5 and other transformers with OpenAI Triton kernels
