@@ -2,21 +2,22 @@
 draft: false
 date: 2022-10-26
 authors:
-  - mbenesty
+- mbenesty
 categories:
-    - Machine Learning
-    - Optimization
-    - Transformers
+- Machine Learning
+- Optimization
+- Transformers
 tags:
-    - Bert
-    - Kernel
-    - OpenAI Triton
-    - T5
+- Bert
+- Kernel
+- OpenAI Triton
+- T5
 links:
-    - Project link: https://github.com/ELS-RD/kernl/
-    - E2E demo notebooks:
-      - XNLI classification: https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb
-      - T5 generation: https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb
+- Project link: https://github.com/ELS-RD/kernl/
+- E2E demo notebooks:
+  - XNLI classification: https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb
+  - T5 generation: https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb
+comments: true
 ---
 
 # Up to 12X faster GPU inference on Bert, T5 and other transformers with OpenAI Triton kernels
