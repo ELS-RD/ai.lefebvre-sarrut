@@ -1,0 +1,8 @@
+{
+  "origins": [
+    "https://ai.lefebvre-sarrut.eu"
+  ],
+  "originsRegex": [
+    "http://localhost:[0-9]+"
+  ]
+}
