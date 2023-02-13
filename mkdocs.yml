@@ -136,6 +136,9 @@ plugins:
   - glightbox # image zoom functionality plugin
 
   - privacy:
+      external_assets_exclude:
+        - giscus.app/* # NECESSARY FOR THE FUNCTIONING OF GISCUS (404 ERROR OTHERWISE)
+        # - cdn.jsdelivr.net/npm/mathjax@3/*
       # external_links: true # github action > Unrecognised configuration name: external_links
       external_links_attr_map:
         target: _blank
