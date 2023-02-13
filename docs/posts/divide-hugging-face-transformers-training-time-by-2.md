@@ -12,7 +12,6 @@ tags:
 - NLP
 - Python
 - Pytorch
-comments: true
 ---
 
 # Divide Hugging Face Transformers training time by 2 or more with dynamic padding and uniform length batching
