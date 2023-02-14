@@ -36,7 +36,11 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install git+https://${{secrets.GH_TOKEN}}@github.com/squidfunk/mkdocs-material-insiders.git@9.0.12-insiders-4.30.2 mkdocs-glightbox pillow cairosvg
+      - run: apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+      - run: apt-get install pngquant
+      - run: pip install git+https://${{secrets.GH_TOKEN}}@github.com/squidfunk/mkdocs-material-insiders.git@9.0.12-insiders-4.30.2
+      - run: pip install mkdocs-glightbox
+      - run: pip install pillow cairosvg
       - run: mkdocs build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
