@@ -147,7 +147,7 @@ plugins:
       external_links_noopener: true
 
   - optimize:
-      enabled: !ENV [CI, false]
+      enabled: !ENV [CI_OPTIMIZATION, false] # only run on ci (requires 3rd party libraries)
 
 # Customization
 extra:
