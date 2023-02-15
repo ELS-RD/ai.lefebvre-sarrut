@@ -1,4 +1,7 @@
-# Lefebvre Sarrut's AI blog
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="/assets/ai-lefebvre-sarrut-logo-light.svg">
+  <source media="(prefers-color-scheme: light)" srcset="/assets/ai-lefebvre-sarrut-logo-dark.svg">
+</picture>
 
 ## Material for MkDocs Insiders version
 
