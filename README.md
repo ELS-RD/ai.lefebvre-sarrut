@@ -1,5 +1,5 @@
-<img width="80%" src="/assets/ai-lefebvre-sarrut-logo-light.svg#gh-light-mode-only" alt="Lefebvre Sarrut's AI blog">
-<img width="80%" src="/assets/ai-lefebvre-sarrut-logo-dark.svg#gh-dark-mode-only" alt="Lefebvre Sarrut's AI blog">
+<img width="90%" src="/assets/ai-lefebvre-sarrut-logo-light.svg#gh-light-mode-only" alt="Lefebvre Sarrut's AI blog">
+<img width="90%" src="/assets/ai-lefebvre-sarrut-logo-dark.svg#gh-dark-mode-only" alt="Lefebvre Sarrut's AI blog">
 
 ## Material for MkDocs Insiders version
 
