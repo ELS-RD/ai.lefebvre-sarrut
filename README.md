@@ -1,7 +1,7 @@
-<a href="https://ai.lefebvre-sarrut.eu/#gh-light-mode-only" target="_blank" rel="noopener">
+<a href="https://ai.lefebvre-sarrut.eu/#gh-light-mode-only">
     <img width="90%" src="/assets/ai-lefebvre-sarrut-logo-light.svg" alt="Lefebvre Sarrut's AI blog">
 </a>
-<a href="https://ai.lefebvre-sarrut.eu/#gh-dark-mode-only" target="_blank" rel="noopener">
+<a href="https://ai.lefebvre-sarrut.eu/#gh-dark-mode-only">
     <img width="90%" src="/assets/ai-lefebvre-sarrut-logo-dark.svg" alt="Lefebvre Sarrut's AI blog">
 </a>
 
