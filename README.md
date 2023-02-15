@@ -1,8 +1,5 @@
-<picture>
-    <source media="(prefers-color-scheme: dark)" type="image/svg+xml" srcset="/assets/ai-lefebvre-sarrut-logo-light.svg">
-    <source media="(prefers-color-scheme: light)" type="image/svg+xml" srcset="/assets/ai-lefebvre-sarrut-logo-dark.svg">
-    <img src="/assets/ai-lefebvre-sarrut-logo-light.svg" alt="Lefebvre Sarrut's AI blog">
-</picture>
+![Lefebvre Sarrut's AI blog](/assets/ai-lefebvre-sarrut-logo-light.svg#gh-dark-mode-only)
+![Lefebvre Sarrut's AI blog](/assets/ai-lefebvre-sarrut-logo-dark.svg#gh-light-mode-only)
 
 ## Material for MkDocs Insiders version
 
