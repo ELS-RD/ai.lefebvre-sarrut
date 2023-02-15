@@ -21,7 +21,21 @@ consulting [How to upgrade](https://squidfunk.github.io/mkdocs-material/upgrade/
 
 The easiest and least intrusive way is to use docker.
 
-> Nota ❗: You need to be logged in to github to pull the image (see [docker login](https://docs.docker.com/engine/reference/commandline/login/)).
+### Important❗
+
+You **need to be logged** in to github to pull the image (
+see [docker login](https://docs.docker.com/engine/reference/commandline/login/)).
+
+### About the **`CI`'s Environment variable**
+
+An environment variable `CI` is set to `true` when deploying continuously to Github pages. This variable allows a number
+of plugins to be run.
+
+If you want the same behavior when running locally, you can set this variable to `true` by adding the `-e CI=true`
+option to the `docker run` command.
+
+> _The execution of the optimization plugin is also conditioned by another environment variable: `CI_OPTIMIZATION`. You
+can also run it locally, but this requires the installation of third party libraries (see documentation)._
 
 ```shell
 # Building a Material for MkDocs docker image with the non built-in plugins
@@ -31,11 +45,17 @@ docker build -t mkdocs-material-insiders-plugins -f Dockerfile docs
 ```shell
 # Previewing the site in watch mode
 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs mkdocs-material-insiders-plugins
+
+# Previewing the site in watch mode with plugins
+docker run --rm -it -p 8000:8000 -e CI=true -v ${PWD}:/docs mkdocs-material-insiders-plugins
 ```
 
 ```shell
 # Build the static site
 docker run --rm -it -v ${PWD}:/docs mkdocs-material-insiders-plugins build
+
+# Build the static site with plugins
+docker run --rm -it -e CI=true -v ${PWD}:/docs mkdocs-material-insiders-plugins build
 ```
 
 ## Writing article
@@ -53,25 +73,29 @@ The metadata must have at least:
 
 Please refer to [the documentation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#usage).
 
-Note that you can use the `draft` flag. If it is set to `true`, the article is visible in preview but will not be published online.
+Note that you can use the `draft` flag. If it is set to `true`, the article is visible in preview but will not be
+published online.
 
-Also note, if you are a recurring author, that you can add yourself to the file at [`.authors.yml`](docs/.authors.yml) to centralize your information. See [documentation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-authors).
+Also note, if you are a recurring author, that you can add yourself to the file at [`.authors.yml`](docs/.authors.yml)
+to centralize your information.
+See [documentation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-authors).
 
-Example: 
+Example:
+
 ```yaml
 ---
 draft: false
 date: 2023-01-01
 authors:
-- mbenesty
+  - mbenesty
 categories:
-- Justice
+  - Justice
 tags:
-- Justice
-- Data Science
-- Technology
-- Programming
-- Machine Learning
+  - Justice
+  - Data Science
+  - Technology
+  - Programming
+  - Machine Learning
 ---
 ```
 
@@ -80,18 +104,20 @@ tags:
 If you want to add categories or tags, first add them to the closed list in the file [`mkdocs.yml`](mkdocs.yml).
 
 See:
+
 ```yaml
 plugins:
-- blog:
-  categories_allowed:
-    
-- tags:
-  tags_allowed:
+  - blog:
+    categories_allowed:
+
+  - tags:
+    tags_allowed:
 ```
 
 #### Adding an excerpt
 
-Don't forget to add the separator `<!-- more -->` to delimit the visible extract in the article index (see [documentation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt)).
+Don't forget to add the separator `<!-- more -->` to delimit the visible extract in the article index (
+see [documentation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/#adding-an-excerpt)).
 
 #### Management of related resources
 
