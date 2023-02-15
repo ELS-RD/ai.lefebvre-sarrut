@@ -1,5 +1,5 @@
-![Lefebvre Sarrut's AI blog](/assets/ai-lefebvre-sarrut-logo-light.svg#gh-light-mode-only)
-![Lefebvre Sarrut's AI blog](/assets/ai-lefebvre-sarrut-logo-dark.svg#gh-dark-mode-only)
+![Lefebvre Sarrut's AI blog](/assets/ai-lefebvre-sarrut-logo-light.svg#gh-light-mode-only | width=80%)
+![Lefebvre Sarrut's AI blog](/assets/ai-lefebvre-sarrut-logo-dark.svg#gh-dark-mode-only | width=80%)
 
 ## Material for MkDocs Insiders version
 
