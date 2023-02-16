@@ -141,6 +141,7 @@ plugins:
       external_assets_exclude:
         - cdn.jsdelivr.net/npm/mathjax@3/*
         - giscus.app/* # necessary for the functioning of giscus (404 error otherwise)
+        - plausible.io/* # necessary for the functioning of plausible (404 error on events otherwise)
       # external_links: true # github action > Unrecognised configuration name: external_links
       external_links_attr_map:
         target: _blank
@@ -162,7 +163,6 @@ extra:
     - icon: simple/maildotru
       link: mailto:rd-feedback@lefebvre-sarrut.eu
       name: Contact us
-
 
 extra_css:
   - stylesheets/extra.css
