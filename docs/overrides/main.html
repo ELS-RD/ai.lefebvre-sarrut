@@ -5,7 +5,28 @@
 {{ super() }}
 <!-- Add scripts that need to run afterwards here -->
 <!-- Plausible analytics. Remove `.local` from the `scr` if you don't want local tracking -->
-<script defer data-domain="ai.lefebvre-sarrut.eu" src="https://plausible.io/js/script.local.outbound-links.js"></script>
+<script defer data-domain="ai.lefebvre-sarrut.eu" src="https://plausible.io/js/script.local.outbound-links.tagged-events.js"></script>
 <!-- 404 error pages tracking -->
 <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<!-- Custom event goals -->
+<script>
+    const toTag = [
+        {
+            attributeName: 'class',
+            attributeValue: 'glightbox',
+            classes: 'plausible-event-name=Click+Image plausible-event-zoom=In'
+        }
+    ]
+
+    document.addEventListener('DOMContentLoaded', function (_e) {
+        toTag.forEach(function (tagObject) {
+            const elements = document.querySelectorAll('[' + tagObject.attributeName + '="' + tagObject.attributeValue + '"]')
+            elements.forEach(function (element) {
+                tagObject.classes.split(' ').forEach(function (className) {
+                    element.classList.add(className)
+                })
+            })
+        })
+    })
+</script>
 {% endblock %}
