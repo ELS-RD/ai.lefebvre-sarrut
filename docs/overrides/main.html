@@ -18,7 +18,17 @@
         }
     ]
 
+    /* Register event handlers after documented loaded */
     document.addEventListener('DOMContentLoaded', function (_e) {
+
+        /* Set up search tracking */
+        if (document.forms.search) {
+            const query = document.forms.search.query;
+            query.addEventListener("blur", function() {
+                if (this.value) plausible("Search", { props: { search_term: this.value } });
+            })
+        }
+
         toTag.forEach(function (tagObject) {
             const elements = document.querySelectorAll('[' + tagObject.attributeName + '="' + tagObject.attributeValue + '"]')
             elements.forEach(function (element) {
