@@ -53,7 +53,7 @@ docker build -t mkdocs-material-insiders-plugins -f Dockerfile docs
 # Previewing the site in watch mode
 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs mkdocs-material-insiders-plugins
 
-# Previewing the site in watch mode with plugins
+# Previewing the site in watch mode with optimization plugins (images, external assets, etc.)
 docker run --rm -it -p 8000:8000 -e CI=true -v ${PWD}:/docs mkdocs-material-insiders-plugins
 ```
 
@@ -61,7 +61,7 @@ docker run --rm -it -p 8000:8000 -e CI=true -v ${PWD}:/docs mkdocs-material-insi
 # Build the static site
 docker run --rm -it -v ${PWD}:/docs mkdocs-material-insiders-plugins build
 
-# Build the static site with plugins
+# Build the static site with optimization plugins (images, external assets, etc.)
 docker run --rm -it -e CI=true -v ${PWD}:/docs mkdocs-material-insiders-plugins build
 ```
 
