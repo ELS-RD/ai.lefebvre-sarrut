@@ -4,15 +4,16 @@ date: 2021-12-29
 authors:
 - mbenesty
 categories:
-  - Optimization
-  - Transformers
+- Optimization
+- Transformers
 tags:
-  - Hugging Face
-  - Nvidia Triton
-  - ONNX Runtime
-  - TensorRT
+- Hugging Face
+- Nvidia Triton
+- ONNX Runtime
+- TensorRT
 links:
-  - Transformer-deploy: https://github.com/ELS-RD/transformer-deploy
+- Transformer-deploy: https://github.com/ELS-RD/transformer-deploy
+- Source code: https://github.com/ELS-RD/transformer-deploy/blob/main/demo/quantization/quantization_end_to_end.ipynb
 ---
 
 # 4.5 times faster Hugging Face transformer inference by modifying some Python AST
@@ -24,15 +25,15 @@ director.
 
 <!-- more -->
 
-**[Transformer-deploy](https://github.com/ELS-RD/transformer-deploy)** is an open source alternative build over
+[Transformer-deploy](https://github.com/ELS-RD/transformer-deploy) is an open source alternative build over
 enterprise-grade softwares:
 
 - Inference server: Nvidia Triton (it takes queries and passes them to an engine, plus adds features useful for
   inference like dynamic batching, or multi inference engine dispatching)
 - Inference engines: Microsoft ONNX Runtime (for CPU and GPU inference) and Nvidia TensorRT (GPU only)
 
-It appears that without much effort, 
-**[it was easy to match the very few HF Infinity public benchmarks](https://towardsdatascience.com/hugging-face-transformer-inference-under-1-millisecond-latency-e1be0057a51c?source=friends_link&sk=cd880e05c501c7880f2b9454830b8915)**.
+It appears that without much
+effort, [it was easy to match the very few HF Infinity public benchmarks](../hugging-face-transformer-inference-under-1-millisecond-latency/index.md).
 
 But there was still an opportunity to push inference performances further that, AFAIK, is not yet leveraged by any other
 OSS project: GPU quantization for all Transformer models!
@@ -40,7 +41,7 @@ OSS project: GPU quantization for all Transformer models!
 Please find below our measures on Roberta-base, seq len 256, batch 32, MNLI dataset (classification):
 
 <figure markdown>
-  ![Measures on Roberta-base](4-5-times-faster-hugging-face-transformer-inference/measures-on-roberta-base.webp){ width="100%", loading=lazy }
+  ![Measures on Roberta-base](measures-on-roberta-base.webp){ width="100%", loading=lazy }
 </figure>
 
 Source
@@ -57,7 +58,7 @@ code).
 On the user end, performing basic quantization of a model on the GPU looks like:
 
 <figure markdown>
-  ![Basic quantization of a model on the GPU](4-5-times-faster-hugging-face-transformer-inference/basic-quantization-of-a-model-on-the-gpu.webp){ width="100%", loading=lazy }
+  ![Basic quantization of a model on the GPU](basic-quantization-of-a-model-on-the-gpu.webp){ width="100%", loading=lazy }
 </figure>
 
 As shown in the benchmark, to get a model 4.5 times faster than vanilla Pytorch, it costs 0.4 accuracy point on the MNLI
@@ -73,8 +74,8 @@ Right now we have successfully tested the process with Albert, Bert (including m
 Camembert, XLM-R, DistilRoberta, etc.), Electra. It should work out of the box or with very little effort for any
 transformer model which can be exported to ONNX format.
 
-Regarding CPU inference, quantization is very easy, and supported by
-**[Transformer-deploy](https://github.com/ELS-RD/transformer-deploy)**, however performance on
+Regarding CPU inference, quantization is very easy, and supported
+by [Transformer-deploy](https://github.com/ELS-RD/transformer-deploy), however performance on
 transformer are very low outside corner cases (like no batch, very short sequence and distilled model), and last Intel
 generation CPU based instance like C6 or M6 on AWS are quite expensive compared to a cheap GPU like Nvidia T4, to say it
 otherwise, on transformer, until you are ok with slow inference and takes a small instance (for a PoC for instance), CPU
