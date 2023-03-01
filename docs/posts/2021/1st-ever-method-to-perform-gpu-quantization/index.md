@@ -4,7 +4,6 @@ date: 2021-12-10
 authors:
 - mbenesty
 categories:
-- Benchmarking
 - Optimization
 - Transformers
 tags:
@@ -25,7 +24,7 @@ It’s quite common in CPU inference, a lot less on GPU, even if the performance
 <!-- more -->
 
 End-to-end method (we also added many other
-benchmarks): [https://github.com/ELS-RD/transformer-deploy/blob/main/demo/quantization_end_to_end.ipynb](https://github.com/ELS-RD/transformer-deploy/blob/main/demo/quantization_end_to_end.ipynb)
+benchmarks): [https://github.com/ELS-RD/transformer-deploy/blob/main/demo/quantization/quantization_end_to_end.ipynb](https://github.com/ELS-RD/transformer-deploy/blob/main/demo/quantization/quantization_end_to_end.ipynb)
 
 The library repo (Apache 2
 licence): [https://github.com/ELS-RD/transformer-deploy](https://github.com/ELS-RD/transformer-deploy)
@@ -33,7 +32,7 @@ licence): [https://github.com/ELS-RD/transformer-deploy](https://github.com/ELS-
 To give you an idea of the latency speed up:
 
 <figure markdown>
-  ![Roberta-base latency benchmark](1st-ever-method-to-perform-gpu-quantization/roberta-base-benchmark.webp){ width="100%", loading=lazy }
+  ![Roberta-base latency benchmark](roberta-base-benchmark.webp){ width="100%", loading=lazy }
   <figcaption>Roberta-base (classification, MNLI) latency benchmark - batch 32, seq len 256</figcaption>
 </figure>
 
@@ -46,7 +45,8 @@ It’s a big deal as quantization is rarely used on GPU (unlike CPU) because it 
 from most ML practitioners (like TensorRT). In the lib we have wrapped those tools so they are transparent to the final
 user.
 
-The result is a model that is **_always several times faster_** than vanilla Pytorch on GPU on any batch size / seq length for
+The result is a model that is **_always several times faster_** than vanilla Pytorch on GPU on any batch size / seq
+length for
 any transformer flavour (small, base, large, XX-large, etc.).
 
 This work is based on a very recent model (QDQBert -> 2018 vanilla Bert which supports quantization) added by Nvidia to
@@ -64,5 +64,6 @@ build from scratch the graph directly in TensorRT like Nvidia does? Or leverage 
 approaches should, in theory, lead to the same result (accuracy/speed), but offer different ease of use (final user) VS
 ease of maintainability (library maintainer) trade-offs.
 
-**GPU quantization is not very discussed/known in NLP, so please don’t hesitate to comment/ask questions below, so we can
+**GPU quantization is not very discussed/known in NLP, so please don’t hesitate to comment/ask questions below, so we
+can
 improve the tuto and democratize GPU quantization.**
