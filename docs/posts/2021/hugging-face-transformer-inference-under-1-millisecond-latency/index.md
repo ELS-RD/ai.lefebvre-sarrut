@@ -166,7 +166,7 @@ even 8-bit integers in case of quantization).
 
 <figure markdown>
   ![from ONNX Runtime — Breakthrough optimizations for transformer inference on GPU and CPU](from-onnx-runtime.png){ width="100%", loading=lazy }
-  <figcaption>from  <a href="https://wiki.lfaidata.foundation/download/attachments/22249690/2.3%202020_Apr_ONNX%20MEETUP_ORT%20breakthrough%20optimizations%20for%20transformer%20inference%20on%20GPU%20and%20CPU.pdf?version=1&modificationDate=1586564917000&api=v2">ONNX Runtime — Breakthrough optimizations for transformer inference on GPU and CPU</a></figcaption>
+  <figcaption>From  <a href="https://wiki.lfaidata.foundation/download/attachments/22249690/2.3%202020_Apr_ONNX%20MEETUP_ORT%20breakthrough%20optimizations%20for%20transformer%20inference%20on%20GPU%20and%20CPU.pdf?version=1&modificationDate=1586564917000&api=v2">ONNX Runtime — Breakthrough optimizations for transformer inference on GPU and CPU</a></figcaption>
 </figure>
 
 Both tools have some fundamental differences, the main ones are:
