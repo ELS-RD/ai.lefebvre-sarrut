@@ -201,3 +201,21 @@ article.md-content__inner h1 {
     fill: var(--md-typeset-color);
 }
 
+/* ----- ----- ----- ----- ----- */
+/* posts */
+/* ----- ----- ----- ----- ----- */
+/* formatting links in articles */
+div[data-md-component="content"] > article.md-content__inner a:not(.md-tag) {
+    text-decoration: underline;
+}
+
+/* exergues */
+div[data-md-component="content"] > article.md-content__inner div.exergues {
+    padding: 0 24px
+}
+
+div[data-md-component="content"] > article.md-content__inner div.exergues > h2 {
+    margin: 0;
+    padding: 32px 0;
+    font-weight: 600;
+}

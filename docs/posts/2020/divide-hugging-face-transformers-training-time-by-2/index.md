@@ -21,56 +21,49 @@ Reducing training time helps to iterate more in a fixed budget time and thus ach
 <!-- more -->
 
 <figure markdown>
-  ![Reducing training time helps to iterate more in a fixed budget time and thus achieve better results](divide-hugging-face-transformers-training-time-by-2/divide-hugging-face-transformers-training-time-by-2.webp){ width="100%", loading=lazy }
+  ![Reducing training time helps to iterate more in a fixed budget time and thus achieve better results](divide-hugging-face-transformers-training-time-by-2.webp){ width="100%", loading=lazy }
   <figcaption>Photo above is made from <a href="https://www.pngwing.com/en/free-png-ncpgf">this</a> (free for non-commercial use) and <a href="https://www.pexels.com/fr-fr/photo/851989/">that</a> (Pexel licence, free for any use)</figcaption>
 </figure>
 
 > _update 06/04/2020: following a suggestion, experiments performed on **large** flavor of CamemBERT have been added to
-the
-[**report
-**](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Divide-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
+the [report](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Divide-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
 TL;DR: training times have been reduced from 4h to 1h30._
 
-I work at [**Lefebvre Sarrut**](https://www.lefebvre-sarrut.eu/), a publishing company which is a major player in the
+I work at [Lefebvre Sarrut](https://www.lefebvre-sarrut.eu/), a publishing company which is a major player in the
 European legal industry. As explained in
 precedent articles, our needs require us to apply deep learning on very large text datasets (legal case anonymization,
 document classification, etc.), that is why we are so interested in making all our (machine learning) tools much faster.
 
-In the spirit of a [**precedent article
-**](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f),
+In the spirit of
+a [precedent article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f),
 the purpose of this one is to explore 2 very simple optimizations which may
-significantly decrease training time on [**Transformers**](https://github.com/huggingface/transformers) library without
-negative effect on accuracy. We ran **21
-experiments + 12 reproducibility experiments** on a large well-known NLP dataset (French part of X-NLI), and we show
-that
-by simply using an out-of-the-box French BERT model ([**CamemBERT**](https://camembert-model.fr/)), default parameters,
-a single consumer grade GPU, and
-these optimizations, for **base** flavor of the model, we can reach, for 128 max token length, **in a 16 min training an
+significantly decrease training time on [Transformers](https://github.com/huggingface/transformers) library without
+negative effect on accuracy. We ran **21 experiments + 12 reproducibility experiments** on a large well-known NLP
+dataset (French part of X-NLI), and we show
+that by simply using an out-of-the-box French BERT model ([CamemBERT](https://camembert-model.fr/)), default parameters,
+a single consumer grade GPU, and these optimizations, for **base** flavor of the model, we can reach, for 128 max token
+length, **in a 16 min training an
 accuracy of 81.5%, beating by 0.5 points the score obtained with a 56 min training without any optimization**, and
-beating
-by 0.3 points the score reported for this task by the CamemBERT model authors. Gains are even more impressive on the
+beating by 0.3 points the score reported for this task by the CamemBERT model authors. Gains are even more impressive on
+the
 same model, for 493 max token length, where training time decreases from 4h38 without any optimization to 1h01 with all
 optimizations, still reaching the same score. _Similar training time reduction have been reached with large model (from
 4h to 1h30 for 128 tokens length)_.
 
-**Source code** to reproduce the experiments is available [**there
-**](https://gist.github.com/pommedeterresautee/1a334b665710bec9bb65965f662c94c8).
+**Source code** to reproduce the experiments is available [there](https://gist.github.com/pommedeterresautee/1a334b665710bec9bb65965f662c94c8).
 
 > _These optimizations are not task / model / language specific but provided code below is written for Pytorch._
->
-> _If you are interested in this topic, follow me on
-Twitter: [https://twitter.com/pommedeterre33](https://twitter.com/pommedeterre33)_
+> 
+> _If you are interested in this topic, follow me on Twitter: [https://twitter.com/pommedeterre33](https://twitter.com/pommedeterre33)_
 
 <figure markdown>
-  ![Training time - batch of 16 sequences 493 tokens](divide-hugging-face-transformers-training-time-by-2/training-time-batch-of-16-sequences-493-tokens.webp){ width="100%", loading=lazy }
+  ![Training time - batch of 16 sequences 493 tokens](training-time-batch-of-16-sequences-493-tokens.webp){ width="100%", loading=lazy }
   <figcaption>Check the <a href="https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI">report</a>, just to see how <a href="https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------">Weights & Biases</a> is an awesome tool that you don’t know you need</figcaption>
 </figure>
 
-Moreover, we logged all our experiments on [**Weights & Biases
-**](https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------), a kind of
+Moreover, we logged all our experiments on [Weights & Biases](https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------), a kind of
 online Tensorboard with a larger scope, so you
-can analyze by yourself our experiment results, the report [**here
-**](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
+can analyze by yourself our experiment results, the report [here](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
 
 _(note that “uniform length batching” is named “smart batching” on the report)_
 
@@ -79,7 +72,7 @@ makes any GPU owner able to reach SOTA scores on almost any task, it seems the N
 finding the optimal batch size to building stuff over the magic architecture. **“Uniform length batching”** is a naive
 idea to push dynamic padding gains further that we wanted to check.
 
-<div style="padding: 0 24px">
+<div class="exergues">
     <h2>At the time of this writing, both are not available out of the box on Transformers library for most common tasks.</h2>
 </div>
 
@@ -88,39 +81,33 @@ techniques are easy to implement on the user side for common tasks (classificati
 practitioners should test/use them.
 
 Over the last year, Transformers library from
-[**Hugging Face**](https://medium.com/u/b1574f0c6c5e?source=post_page-----21bf7129db9e--------------------------------)
+[Hugging Face](https://medium.com/u/b1574f0c6c5e?source=post_page-----21bf7129db9e--------------------------------)
 became the standard way to use large pre-trained language NLP models. It comes with plenty of features covering most NLP
 use cases, and has a polished API up to a point where you start to expect it to be perfect. This feeling is even
-stronger since [**version 2.9**](https://github.com/huggingface/transformers/releases/tag/v2.9.0) bringing us the [*
-*Trainer**](https://github.com/huggingface/transformers/blob/master/src/transformers/trainer.py) class, an adaptation of
+stronger since [version 2.9](https://github.com/huggingface/transformers/releases/tag/v2.9.0) bringing us the [Trainer](https://github.com/huggingface/transformers/blob/master/src/transformers/trainer.py) class, an adaptation of
 the carefully designed
-[**William Falcon
-**](https://medium.com/u/8536ebfbc90b?source=post_page-----21bf7129db9e--------------------------------)
-’s Pytorch Lightning training API to specific Transformers requirements, which free users from most engineering aspects
+[William Falcon](https://medium.com/u/8536ebfbc90b?source=post_page-----21bf7129db9e--------------------------------)’s 
+Pytorch Lightning training API to specific Transformers requirements, which free users from most engineering aspects
 of training (Tensorboard logging, mixed precision, gradient accumulation, multi-GPU setup, etc.) and therefore is the
 new default way to fine-tune models.
 
 In a situation where everything is so polished, you tend to believe that everything has been optimized to its maximum.
-One should not forget that the library is still young, and the team is working on several fronts at the same time (
-recent example being working with
-[**Tianlei Wu**](https://medium.com/u/3f4e5d4653f0?source=post_page-----21bf7129db9e--------------------------------)
+One should not forget that the library is still young, and the team is working on several fronts at the same time 
+(recent example being working with
+[Tianlei Wu](https://medium.com/u/3f4e5d4653f0?source=post_page-----21bf7129db9e--------------------------------)
 from
-[**Azure DevOps**](https://medium.com/u/85d826944fa5?source=post_page-----21bf7129db9e--------------------------------)
-to leverage ONNX and [**reduce inference times
-**](https://medium.com/microsoftazure/accelerate-your-nlp-pipelines-using-hugging-face-transformers-and-onnx-runtime-2443578f4333)
-in some setup). When you go deep inside the library, you may still find some
-interesting low-hanging fruits to seize.
+[Azure DevOps](https://medium.com/u/85d826944fa5?source=post_page-----21bf7129db9e--------------------------------)
+to leverage ONNX and [reduce inference times](https://medium.com/microsoftazure/accelerate-your-nlp-pipelines-using-hugging-face-transformers-and-onnx-runtime-2443578f4333)
+in some setup). When you go deep inside the library, you may still find some interesting low-hanging fruits to seize.
 
-We ran experiments and summarized what we found below and [**there
-**](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
+We ran experiments and summarized what we found below and 
+[there](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
 
-If you are not yet a “padding / attention mask” expert, you may want to read this excellent [**article
-**](https://towardsdatascience.com/taming-lstms-variable-sized-mini-batches-and-why-pytorch-is-good-for-your-health-61d35642972e)
-written for old
-style RNN (from
-[**William Falcon
-**](https://medium.com/u/8536ebfbc90b?source=post_page-----21bf7129db9e--------------------------------)
-… again!). To make it short, training neural networks on a batch of sequences requires them to have the exact same
+If you are not yet a “padding / attention mask” expert, you may want to read this excellent 
+[article](https://towardsdatascience.com/taming-lstms-variable-sized-mini-batches-and-why-pytorch-is-good-for-your-health-61d35642972e)
+written for old style RNN (from
+[William Falcon](https://medium.com/u/8536ebfbc90b?source=post_page-----21bf7129db9e--------------------------------)… again!). 
+To make it short, training neural networks on a batch of sequences requires them to have the exact same
 length to build the batch matrix representation. Because real life NLP datasets are always made of texts of variable
 lengths, we often need to make some sequences shorter by truncating them, and some others longer by adding at the end a
 repeated fake token called “pad” token. Because the pad token doesn’t represent a real word/subword/signal, when most
@@ -146,27 +133,27 @@ techniques described above.
 ## Settings
 
 To check if these optimizations work well with a transformer based language model, we ran 14 experiments with different
-settings on the French part of [**X-NLI**](https://arxiv.org/pdf/1809.05053.pdf).
+settings on the French part of [X-NLI](https://arxiv.org/pdf/1809.05053.pdf).
 
 If you don’t know X-NLI, it is basically a sentence pair classification task where the model needs to guess if the
 second sentence entails/contradicts/is neutral compared to the first one (3 classes). X-NLI train set is a machine
 translation of a large English dataset, and test set is made of 5K pairs manually translated in 15 languages (including
 French) from the same English dataset.
 
-The model used for the experiments is [**CamemBERT**](https://arxiv.org/pdf/1911.03894.pdf), a Roberta architecture
+The model used for the experiments is [CamemBERT](https://arxiv.org/pdf/1911.03894.pdf), a Roberta architecture
 trained with French texts by Facebook FAIR and
 Inria labs. Several flavors exist, figures below are related to the first one which have been released and known as
-[**camembert-base**](https://huggingface.co/camembert-base) in Transformers (110M parameters trained on 130 Gb data).
-_[**camembert-large**](https://huggingface.co/camembert-base) experiments are available in
+[camembert-base](https://huggingface.co/camembert-base) in Transformers (110M parameters trained on 130 Gb data).
+_[camembert-large](https://huggingface.co/camembert-base) experiments are available in
 the report._
 
 <figure markdown>
-  ![Accuracy of models for french on the XNLI test set](divide-hugging-face-transformers-training-time-by-2/accuracy-of-models-for-french-on-the-xnli-test-set.png){ width="100%", loading=lazy }
+  ![Accuracy of models for french on the XNLI test set](accuracy-of-models-for-french-on-the-xnli-test-set.png){ width="100%", loading=lazy }
 </figure>
 
 > _Camembert paper authors reached an accuracy of 81.2% in 10 epochs with early stopping,1e-5 learning rate, sequence
 length of 512 tokens
-and [**few other things**](https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md)._
+and [few other things](https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md)._
 
 For each experiment, we limit training to 1 epoch because we only have access to a single GPU to run all experiments.
 All runs are using the same seed (exception being “reproducibility” experiments with different seeds, as explained
@@ -177,9 +164,9 @@ X-NLI, so default settings are probably good enough.
 **X-NLI is mainly made of pairs of short sentences:** when both parts of the pair are concatenated in a single sequence,
 over 97% of pairs have a length shorter than 128 tokens. This length distribution has a large impact on training time
 reduction opportunities. To make it short, on this dataset, it is OK to truncate sequences at 128 tokens to build
-“large” batches even on a consumer-grade GPU. On a more balanced dataset like [**Ms Marco**](http://www.msmarco.org/),
+“large” batches even on a consumer-grade GPU. On a more balanced dataset like [Ms Marco](http://www.msmarco.org/),
 you need a 512-token limit to
-reach close to SOTA [**Mean Reciprocal Rank**](https://en.wikipedia.org/wiki/Mean_reciprocal_rank) (a common information
+reach close to SOTA [Mean Reciprocal Rank](https://en.wikipedia.org/wiki/Mean_reciprocal_rank) (a common information
 retrieval measure). In both cases, the 2 techniques
 presented here bring large training time reduction (by a factor of 2 or more), but for different reasons that we will
 analyze below. In our use of these optimizations on our private datasets, we always got a significant effect on training
@@ -197,12 +184,12 @@ practitioners run training.
 ## Results
 
 <figure markdown>
-  ![Accuracy over time for each combination](divide-hugging-face-transformers-training-time-by-2/accuracy-over-time-for-each-combination-1.png){ width="100%", loading=lazy }
+  ![Accuracy over time for each combination](accuracy-over-time-for-each-combination-1.png){ width="100%", loading=lazy }
   <figcaption>Accuracy over time for each combination, interactive graph in the report <a href="https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI">here</a></figcaption>
 </figure>
 
 <figure markdown>
-  ![Accuracy over time for each combination](divide-hugging-face-transformers-training-time-by-2/accuracy-over-time-for-each-combination-2.png){ width="100%", loading=lazy }
+  ![Accuracy over time for each combination](accuracy-over-time-for-each-combination-2.png){ width="100%", loading=lazy }
 </figure>
 
 TL;DR :
@@ -210,27 +197,24 @@ TL;DR :
 ### Timing
 
 - **Dynamic padding used alone provides a significant training time reduction, that can be reinforced by using uniform
-  size
-  batching and mixed precision;**
+  size batching and mixed precision;**
 - On some setup (small mini batch size + short sequences), mixed precision can produce a longer training time, in other
   cases it is a game changer (large mini batch size and/or long sequences).
 
 ### Accuracy
 
 - **Across the 14 runs, 11 obtained in a single epoch a score above 81.18% (the score reported in the Camembert paper
-  for
-  10 epochs with early stopping);**
+  for 10 epochs with early stopping);**
 - When we compare pairs of runs (same settings with truncation at 128 VS. truncation at 493), it appears unsurprisingly
   that truncation has on average a (small) cost in accuracy, even if only 3% of the dataset is concerned by the
   128-token truncation.
 
-<div style="padding: 0 24px">
+<div class="exergues">
   <h2>By using both optimizations and mixed precision, we beat in a 16mn training the score of a 4h38 training!</h2>
 </div>
 
 > _Findings for **base** model are the same for **large** model, measures from the additional 12 experiments are in
-the [**report
-**](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Divide-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI)._
+the [report](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Divide-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI)._
 
 ## Optimization opportunities
 
@@ -245,7 +229,7 @@ length, you will add 118 pad tokens to those 10 tokens sequences, and then perfo
 tokens.
 
 > _Worst, as written in
-the [**original BERT repo README**](https://github.com/google-research/bert/blob/master/README.md)_, “…attention is
+the [original BERT repo README](https://github.com/google-research/bert/blob/master/README.md)_, “…attention is
 > quadratic to the sequence length. In other words, a
 > batch of 64 sequences of length 512 is much more expensive than a batch of 256 sequences of length 128.”.
 
@@ -255,28 +239,26 @@ train set. Because the learning / gradient descent is performed at the mini batc
 limit the padding effect, more precisely we can first search for the longest sequence length in the mini batch, and then
 pad the other sequences accordingly.
 
-Those operations can be performed in the _collate_fn_ function. The purpose of this function is described in the [*
-*Pytorch
-documentation**](https://pytorch.org/docs/stable/data.html#working-with-collate-fn), basically it takes the individual
+Those operations can be performed in the _collate_fn_ function. The purpose of this function is described in the 
+[Pytorch documentation](https://pytorch.org/docs/stable/data.html#working-with-collate-fn), basically it takes the individual
 examples returned by the Dataset and merges them to build the tensor
 matrix to send to the model.
 
 ### Dynamic padding
 
 As explained above, the idea is to adjust the sequence length at the mini batch level instead of dataset level. That way
-we can limit unused computation. The work is performed inside the [**Pytorch Dataloader
-**](https://pytorch.org/docs/stable/data.html). Let’s remind how it works:
+we can limit unused computation. The work is performed inside the 
+[Pytorch Dataloader](https://pytorch.org/docs/stable/data.html). Let’s remind how it works:
 
 <figure markdown>
-  ![Inside a Pytorch Dataloader](divide-hugging-face-transformers-training-time-by-2/inside-a-pytorch-dataloader.webp){ width="100%", loading=lazy }
+  ![Inside a Pytorch Dataloader](inside-a-pytorch-dataloader.webp){ width="100%", loading=lazy }
   <figcaption>Inside a Pytorch Dataloader</figcaption>
 </figure>
 
 The components:
 
 - **Dataset()** is the brick having access to the original text data, being a simple list of strings or something else
-  like a
-  database connector ;
+  like a database connector ;
 - **Sampler()** generates indexes to target a datapoint in the Dataset. It follows a strategy, for instance sequential
   generation (for a test set) or random generation (for a train set).
 - **collate_fn()** : for each mini batch, it receives the data points (from the Dataset) selected by the Sampler and
@@ -460,26 +442,25 @@ We will compare the setups with and without the uniform size batching only:
 In both cases, there is an improvement, and we may conclude that there is no negative impact on accuracy.
 
 However, we run many experiments combining several options, and according to the
-[**Weights & Biases
-**](https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------)
+[Weights & Biases](https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------)
 dashboard, the use of uniform size batching is negatively correlated with accuracy. After a manual checking of
 experiments pairs (with/without the option), this effect is not obvious.
 
 <figure markdown>
-  ![Config parameter](divide-hugging-face-transformers-training-time-by-2/config-parameter.png){ width="100%", loading=lazy }
+  ![Config parameter](config-parameter.png){ width="100%", loading=lazy }
 </figure>
 
 <figure markdown>
-  ![Mixed precision](divide-hugging-face-transformers-training-time-by-2/mixed-precision.png){ width="100%", loading=lazy }
+  ![Mixed precision](mixed-precision.png){ width="100%", loading=lazy }
   <figcaption>(if you want to go deeper, do not hesitate to check the <a href="https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI">report</a>)</figcaption>
 </figure>
 
 ## Mixed precision
 
-Mixed precision is possible on Pytorch through the [**Nvidia apex library**](https://github.com/NVIDIA/apex). To make it
+Mixed precision is possible on Pytorch through the [Nvidia apex library](https://github.com/NVIDIA/apex). To make it
 short, in its most common mode, mixed
 precision consists of performing most operations with half precision and accumulating results in full precision (more
-info in [**apex documentation**](https://nvidia.github.io/apex/amp.html)).
+info in [apex documentation](https://nvidia.github.io/apex/amp.html)).
 
 Apex is known for bringing improvement in some scenarios, sometimes it also brings some instability (e.g., the loss
 amplitude during training is bigger than without mixed precision), and quite rarely it avoids the model to converge.
@@ -505,10 +486,8 @@ This time, even when the step is made of short sequence, each contains 64 sequen
 benefit from mixed precision.
 
 Regarding accuracy, there is no clear pattern. You can make your own idea by yourself by checking the
-[**Weights & Biases
-**](https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------)
-[**report
-**](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
+[Weights & Biases](https://medium.com/u/c4669728a9af?source=post_page-----21bf7129db9e--------------------------------)
+[report](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
 
 ## Reproducible results
 
@@ -521,7 +500,7 @@ are reproduced.
 > _Same kind of reproduction experiments have been also performed for the large model. Results are the same._
 
 <figure markdown>
-  ![Reproducibility experiments](divide-hugging-face-transformers-training-time-by-2/reproducibility-experiments.webp){ width="100%", loading=lazy }
+  ![Reproducibility experiments](reproducibility-experiments.webp){ width="100%", loading=lazy }
   <figcaption>Again, want interactive graph? -> <a href="https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI">report</a> <-</figcaption>
 </figure>
 
@@ -531,7 +510,7 @@ are reproduced.
 Moreover, we learned that on a dataset with small batches, one should be careful with mixed precision, because it can
 lead to unexpected slower training if there is not enough computation to perform.
 
-<div style="padding: 0 24px">
+<div class="exergues">
   <h2>We are convinced that both techniques are low-hanging fruits that should be widely used by Transformers users.</h2>
 </div>
 
@@ -540,5 +519,5 @@ the story, in another unrelated experiment, we noticed that the French train set
 translation of an english dataset) was of low quality (many examples are absolute nonsense in French), and we were
 wondering if translating it with a better quality would improve the accuracy on the test set (which is a manual
 translation). It represented an important opportunity to us, because if it worked it would mean having plenty of dataset
-in French to play with. We spent a few bucks on DeepL, the translation was much better… and the accuracy didn’t change (
-we even thought there was a bug in our measures). **Not all simple ideas are created equal!**
+in French to play with. We spent a few bucks on DeepL, the translation was much better… and the accuracy didn’t change 
+(we even thought there was a bug in our measures). **Not all simple ideas are created equal!**

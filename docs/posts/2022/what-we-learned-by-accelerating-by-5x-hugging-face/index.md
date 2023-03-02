@@ -2,16 +2,15 @@
 draft: false
 date: 2022-02-09
 authors:
-    - mbenesty
+- mbenesty
 categories:
-    - Machine Learning
-    - Optimization
-    - Transformers
+- Optimization
+- Transformers
 tags:
-    - Hugging Face
+- Hugging Face
 links:
-    - Project: https://github.com/ELS-RD/transformer-deploy/
-    - Notebook (reproduce measures): https://github.com/ELS-RD/transformer-deploy/blob/main/demo/generative-model/gpt2.ipynb
+- Transformer-deploy: https://github.com/ELS-RD/transformer-deploy
+- Notebook (reproduce measures): https://github.com/ELS-RD/transformer-deploy/blob/main/demo/generative-model/gpt2.ipynb
 ---
 
 # What we learned by accelerating by 5X Hugging Face generative language models
@@ -43,7 +42,7 @@ and the decoding algorithm which consumes those tensors and selects 1 (or more) 
 Keep in mind that these blocks may live on different hardware… (spoiler: it’s not a good idea)
 
 <figure markdown>
-  ![Accelerating GPT2](what-we-learned-by-accelerating-by-5x-hugging-face/accelerating-gpt2.webp){ width="100%", loading=lazy }
+  ![Accelerating GPT2](accelerating-gpt2.webp){ width="100%", loading=lazy }
 </figure>
 
 ## 2/ Memory IO is the main performance bottleneck
@@ -53,7 +52,7 @@ Classic approach to make transformer inference 5-10X faster:
 Pytorch -> ONNX -> computation graph simplification -> quantization -> Fast!
 
 <figure markdown>
-  ![Accelerating GPT2](what-we-learned-by-accelerating-by-5x-hugging-face/optimization-done-by-onnx-runtime-tensor-rt.webp){ width="100%", loading=lazy }
+  ![Accelerating GPT2](optimization-done-by-onnx-runtime-tensor-rt.webp){ width="100%", loading=lazy }
 </figure>
 
 Sounds cool, but when we tried on GPT-2 with ONNX Runtime we got a model 60% slower than vanilla Pytorch!

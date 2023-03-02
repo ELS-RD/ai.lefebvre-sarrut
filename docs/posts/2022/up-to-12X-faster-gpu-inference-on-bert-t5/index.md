@@ -4,7 +4,6 @@ date: 2022-10-26
 authors:
 - mbenesty
 categories:
-- Machine Learning
 - Optimization
 - Transformers
 tags:
@@ -13,7 +12,7 @@ tags:
 - OpenAI Triton
 - T5
 links:
-- Project link: https://github.com/ELS-RD/kernl/
+- Kernl project: https://github.com/ELS-RD/kernl/
 - E2E demo notebooks:
   - XNLI classification: https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb
   - T5 generation: https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb
@@ -29,10 +28,10 @@ This has been possible because we wrote custom GPU kernels with the new OpenAI p
 <!-- more -->
 
 - **[Project link](https://github.com/ELS-RD/kernl/)**
-- E2E demo notebooks: **[XNLI classification](https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb)**, **[T5 generation](https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb)**
+- **E2E demo notebooks**: [XNLI classification](https://github.com/ELS-RD/kernl/blob/main/tutorial/bert%20e2e.ipynb), [T5 generation](https://github.com/ELS-RD/kernl/blob/main/tutorial/t5%20e2e.ipynb)
 
 <figure markdown>
-  ![Speedup over Hugging Face baseline](up-to-12X-faster-gpu-inference-on-bert-t5/speedup-over-hugging-face-baseline.webp){ width="100%", loading=lazy }
+  ![Speedup over Hugging Face baseline](speedup-over-hugging-face-baseline.webp){ width="100%", loading=lazy }
   <figcaption>Benchmarks ran on a 3090 RTX GPU, 12 cores Intel CPU, more info below</figcaption>
 </figure>
 
@@ -101,7 +100,7 @@ ONNX Runtime poses them too many challenges (like debugging precision issues in 
 With its inference expert-oriented API, TensorRT was not even an option;
 - We are exploring applications of large generative language models in legal industry, 
 and we need easier dynamic behavior support plus more efficient quantization, 
-our creative approaches for that purpose [we shared on Reddit](https://www.reddit.com/r/MachineLearning/comments/uwkpmt/p_what_we_learned_by_making_t5large_2x_faster/) proved to be more fragile than we initially thought;
+our creative approaches for that purpose [we shared here](../what-we-learned-by-making-t5-large/index.md) proved to be more fragile than we initially thought;
 - New business opportunities if we were able to train models supporting large contexts (>5K tokens)
 
 On a more personal note, I enjoyed much more writing kernels and understanding low level computation of transformers than mastering multiple complicated tools API and their environments. 

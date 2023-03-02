@@ -11,7 +11,7 @@ tags:
 - Nvidia Triton
 links:
 - Source code: https://github.com/ELS-RD/triton_transformers
-- Project description: https://towardsdatascience.com/hugging-face-transformer-inference-under-1-millisecond-latency-e1be0057a51c?source=friends_link&sk=cd880e05c501c7880f2b9454830b8915
+- Project description: posts/2021/hugging-face-transformer-inference-under-1-millisecond-latency/index.md
 ---
 
 # Optimization of Hugging Face Transformer models to get Inference < 1 Millisecond Latency + deployment on production ready inference server
@@ -25,10 +25,10 @@ I just released a project showing how to optimize big NLP models and deploy them
 source code: [https://github.com/ELS-RD/triton_transformers](https://github.com/ELS-RD/triton_transformers)
 
 project
-description: [https://towardsdatascience.com/hugging-face-transformer-inference-under-1-millisecond-latency-e1be0057a51c?source=friends_link&sk=cd880e05c501c7880f2b9454830b8915](https://towardsdatascience.com/hugging-face-transformer-inference-under-1-millisecond-latency-e1be0057a51c?source=friends_link&sk=cd880e05c501c7880f2b9454830b8915)
+description: [Hugging Face Transformer Inference Under 1 Millisecond Latency](../hugging-face-transformer-inference-under-1-millisecond-latency/index.md)
 
-Please note that it is for **real life large scale NLP model deployment**. It's only based on open source softwares. It's
-using tools not very often discussed in usual NLP tutorial.
+Please note that it is for **real life large scale NLP model deployment**. It's only based on open source softwares.
+It's using tools not very often discussed in usual NLP tutorial.
 
 Performance have been benchmarked and compared with recent Hugging Face Infinity inference server (commercial product @
 20K$ for a single model deployed on a single machine).
