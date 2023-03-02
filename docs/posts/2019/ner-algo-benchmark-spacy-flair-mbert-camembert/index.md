@@ -69,6 +69,8 @@ an [original architecture](https://www.kdnuggets.com/2019/12/predictions-ai-mach
 > _We publish NER scores on commercial decisions. They should be **carefully** compared to those of
 the [previous article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f)
 as the commercial court dataset is much harder to work on than the courts of appeal._
+> 
+> _If you are interested in this topic, follow me on Twitter: [https://twitter.com/pommedeterre33](https://twitter.com/pommedeterre33)_
 
 ## Why a legal publisher is so interested in anonymizing commercial legal cases for free through open sourcing its source code?
 

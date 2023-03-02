@@ -53,6 +53,8 @@ optimizations, still reaching the same score. _Similar training time reduction h
 **Source code** to reproduce the experiments is available [there](https://gist.github.com/pommedeterresautee/1a334b665710bec9bb65965f662c94c8).
 
 > _These optimizations are not task / model / language specific but provided code below is written for Pytorch._
+> 
+> _If you are interested in this topic, follow me on Twitter: [https://twitter.com/pommedeterre33](https://twitter.com/pommedeterre33)_
 
 <figure markdown>
   ![Training time - batch of 16 sequences 493 tokens](training-time-batch-of-16-sequences-493-tokens.webp){ width="100%", loading=lazy }

@@ -43,6 +43,8 @@ Nvidia? **Spoiler: yes it is and with this tutorial, it’s easy to reproduce an
 > _The README provides instructions on how to run the code and has been tested both on an AWS VM with deep learning
 image version 44 and a bare metal server with a Nvidia 3090 GPU (measures published in the article are from the AWS
 machine)._
+> 
+> _If you are interested in this topic, follow me on Twitter: [https://twitter.com/pommedeterre33](https://twitter.com/pommedeterre33)_
 
 <figure markdown>
   ![Public demo](public-demo.png){ width="100%", loading=lazy }
