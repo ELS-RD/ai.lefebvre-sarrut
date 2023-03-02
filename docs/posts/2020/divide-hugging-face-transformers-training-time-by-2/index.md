@@ -90,24 +90,22 @@ of training (Tensorboard logging, mixed precision, gradient accumulation, multi-
 new default way to fine-tune models.
 
 In a situation where everything is so polished, you tend to believe that everything has been optimized to its maximum.
-One should not forget that the library is still young, and the team is working on several fronts at the same time (
-recent example being working with
+One should not forget that the library is still young, and the team is working on several fronts at the same time 
+(recent example being working with
 [Tianlei Wu](https://medium.com/u/3f4e5d4653f0?source=post_page-----21bf7129db9e--------------------------------)
 from
 [Azure DevOps](https://medium.com/u/85d826944fa5?source=post_page-----21bf7129db9e--------------------------------)
-to leverage ONNX and [reduce inference times
-](https://medium.com/microsoftazure/accelerate-your-nlp-pipelines-using-hugging-face-transformers-and-onnx-runtime-2443578f4333)
-in some setup). When you go deep inside the library, you may still find some
-interesting low-hanging fruits to seize.
+to leverage ONNX and [reduce inference times](https://medium.com/microsoftazure/accelerate-your-nlp-pipelines-using-hugging-face-transformers-and-onnx-runtime-2443578f4333)
+in some setup). When you go deep inside the library, you may still find some interesting low-hanging fruits to seize.
 
-We ran experiments and summarized what we found below and [there
-](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
+We ran experiments and summarized what we found below and 
+[there](https://app.wandb.ai/pommedeterresautee/speed_training/reports/Decrease-HuggingFace-Transformers-training-times-by-2-or-more-with-dynamic-padding-and-uniform-length-batching--VmlldzoxMDgzOTI).
 
-If you are not yet a “padding / attention mask” expert, you may want to read this excellent [article
-](https://towardsdatascience.com/taming-lstms-variable-sized-mini-batches-and-why-pytorch-is-good-for-your-health-61d35642972e)
+If you are not yet a “padding / attention mask” expert, you may want to read this excellent 
+[article](https://towardsdatascience.com/taming-lstms-variable-sized-mini-batches-and-why-pytorch-is-good-for-your-health-61d35642972e)
 written for old style RNN (from
-[William Falcon](https://medium.com/u/8536ebfbc90b?source=post_page-----21bf7129db9e--------------------------------)
-… again!). To make it short, training neural networks on a batch of sequences requires them to have the exact same
+[William Falcon](https://medium.com/u/8536ebfbc90b?source=post_page-----21bf7129db9e--------------------------------)… again!). 
+To make it short, training neural networks on a batch of sequences requires them to have the exact same
 length to build the batch matrix representation. Because real life NLP datasets are always made of texts of variable
 lengths, we often need to make some sequences shorter by truncating them, and some others longer by adding at the end a
 repeated fake token called “pad” token. Because the pad token doesn’t represent a real word/subword/signal, when most
@@ -519,5 +517,5 @@ the story, in another unrelated experiment, we noticed that the French train set
 translation of an english dataset) was of low quality (many examples are absolute nonsense in French), and we were
 wondering if translating it with a better quality would improve the accuracy on the test set (which is a manual
 translation). It represented an important opportunity to us, because if it worked it would mean having plenty of dataset
-in French to play with. We spent a few bucks on DeepL, the translation was much better… and the accuracy didn’t change (
-we even thought there was a bug in our measures). **Not all simple ideas are created equal!**
+in French to play with. We spent a few bucks on DeepL, the translation was much better… and the accuracy didn’t change 
+(we even thought there was a bug in our measures). **Not all simple ideas are created equal!**
