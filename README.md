@@ -92,17 +92,17 @@ Example:
 ```yaml
 ---
 draft: false
-date: 2023-01-01
+date: 2022-10-26
 authors:
   - mbenesty
 categories:
-  - Justice
+  - Optimization
+  - Transformers
 tags:
-  - Justice
-  - Data Science
-  - Technology
-  - Programming
-  - Machine Learning
+  - Bert
+  - Kernel
+  - OpenAI Triton
+  - T5
 ---
 ```
 
