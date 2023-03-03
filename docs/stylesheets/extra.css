@@ -218,4 +218,5 @@ div[data-md-component="content"] > article.md-content__inner div.exergues > h2 {
     margin: 0;
     padding: 32px 0;
     font-weight: 600;
+    opacity: 0.64;
 }
