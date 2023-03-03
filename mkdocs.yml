@@ -107,12 +107,14 @@ plugins:
   - tags:
       tags_file: tags.md
       tags_allowed:
+        - Anonymization
         - Bert
         - Cuda
         - Cuda Graph
         - Data Science
         - Deep Dives
         - Deep Learning
+        - Flair
         - GPU Quantization
         - Hugging Face
         - Justice
@@ -127,6 +129,7 @@ plugins:
         - Programming
         - Python
         - Pytorch
+        - Spacy
         - T5
         - Technology
         - TensorRT

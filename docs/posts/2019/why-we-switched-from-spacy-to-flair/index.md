@@ -2,12 +2,16 @@
 draft: true
 date: 2019-09-26
 authors:
-
 - mbenesty
-
+categories:
+- Optimization
+tags:
+- Anonymization
+- Flair
+- Spacy
+links:
+- Our Spacy based code: https://github.com/ELS-RD/anonymisation
 ---
-
-[//]: # (Our Spacy based code is [open sourced]&#40;https://github.com/ELS-RD/anonymisation&#41;)
 
 # Why we switched from Spacy to Flair to anonymize French case law
 
