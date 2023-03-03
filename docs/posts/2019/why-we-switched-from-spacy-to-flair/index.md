@@ -73,7 +73,7 @@ Recognition. Application to French Legal Texts”, 2019](https://arxiv.org/pdf/1
 
 <figure markdown>
   ![Have you ever read a NLP paper from a national supreme court?](have-you-ever-read-a-nlp-paper-from-a-national-supreme-court.png){ width="100%", loading=lazy }
-  <figcaption>Have you ever read a NLP paper from a national supreme court? Here is your chance :-)</figcaption>
+  <figcaption>Have you ever read a NLP paper from a national supreme court? <a href="https://arxiv.org/pdf/1909.03453.pdf">Here</a> is your chance :-)</figcaption>
 </figure>
 
 Our Spacy based code is [open sourced](https://github.com/ELS-RD/anonymisation) since last year (and has been updated to
@@ -92,7 +92,7 @@ our inventory of French Court of appeal cases, it would have taken almost 30 day
 2080TI).
 
 <div class="exergues">
-    <h2>Without modifying the model (and its accuracy), nor adding the complexity or the cost of distributed computation, but “only” by improving the way computations are performed, inference time has been divided by 10 [^1] (from 1mn 16s to 11s for 100 cases).</h2>
+    <h2>Without modifying the model (and its accuracy), nor adding the complexity or the cost of distributed computation, but “only” by improving the way computations are performed, inference time has been divided by 10 [1] (from 1mn 16s to 11s for 100 cases).</h2>
 </div>
 
 Instead of 30 days, a complete inventory processing takes less than 3 days. A 3 days processing is something we can
@@ -165,10 +165,10 @@ for Sequence Labeling”, 2018](https://alanakbik.github.io/papers/coling2018.pd
 (trained on French Wikipedia) and a character-based pre-trained language model (trained on French Wikipedia). No
 fine-tuning of the language model on legal data has been performed.
 
-For Spacy, there is no ready-to-download French pre-trained generic language model. A feature exists but is not yet well
-documented regarding its Python API. On the website, there are some files called “language model”, but the expression is
-used here to mean already trained for a specific task model (NER, classification, etc.). Unfortunately, rapid tests we
-have performed showed us really poor results **on our legal data** with the French pre-trained NER model.
+For Spacy, there is no ready-to-download French pre-trained **generic** language model. A feature exists but is not yet
+well documented regarding its Python API. On the website, there are some files called “language model”, but the
+expression is used here to mean already trained for a specific task model (NER, classification, etc.). Unfortunately,
+rapid tests we have performed showed us really poor results **on our legal data** with the French pre-trained NER model.
 
 For the remaining of the article, split of data is made that way: train (80%), test (20%), no dedicated dev set (it is a
 part of the train set) has been used as there has been no model hyper parameters tweaking at all (just early stopping
@@ -272,7 +272,7 @@ still too far from our requirements.
 We can still add rules, but the drawback of such approach is that it is not general enough. If we want to switch
 language, or work on another court, we need to write new rules or adapt existing ones.
 
-<div>
+<div class="exergues">
   <h2>We have exchanged manual annotation cost with programming and maintaining source code cost.</h2>
 </div>
 
@@ -339,7 +339,8 @@ CRF algorithm, and even in deep learning based NER, CRF may bring large improvem
 decreases micro F1 by 6 points, a similar in effect decrease to what is described in Lample paper on the German CONLL
 dataset for instance).
 
-The source code of Flair Viterbi implementation was an official PyTorch website page. Description of the Viterbi
+The source code of Flair Viterbi implementation was an official PyTorch
+website [page](https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html). Description of the Viterbi
 algorithm can be found easily, but to summarize, its purpose is to find the most likely combination of tags for a
 sequence, when there are dependencies between tags. The way it works requires intermediate states making the exercise
 more complex.
@@ -505,7 +506,8 @@ provide adequate advice to improve them).**
 
 ## Notes
 
-[^1]: On the well-known public dataset CONLL 2003, inference time has been divided by 4.5 on the same GPU (from 1mn44s to
+[^1]: On the well-known public dataset CONLL 2003, inference time has been divided by 4.5 on the same GPU (from 1mn44s
+to
 23s), the difference in the effect of the optimizations is mainly due to the presence of many very long sentences in the
 French case law dataset, making some optimization more crucial. According to measures from the Zalando Research team,
 same improvement on this dataset has been observed on the powerful Nvidia V100. Each timing difference is reported
