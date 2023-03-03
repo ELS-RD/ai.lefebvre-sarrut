@@ -54,8 +54,7 @@ machine)._
 I work at [Lefebvre Sarrut](https://www.lefebvre-sarrut.eu/) R&D, a leading European legal publisher, and my team has
 deployed quite a bunch of models in
 production, including several transformers, from small distilled models to large ones, to perform a variety of tasks on
-legal documents. Some of these works have been
-described [here](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f)
+legal documents. Some of these works have been described [here](../../2019/why-we-switched-from-spacy-to-flair/index.md)
 and [there](../../2019/ner-algo-benchmark-spacy-flair-mbert-camembert/index.md).
 
 In this article we will see how to deploy a modern NLP model in an industrial setup. Dozens of tutorials exist on the
