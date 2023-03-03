@@ -109,6 +109,7 @@ plugins:
       tags_allowed:
         - Bert
         - Cuda
+        - Cuda Graph
         - Data Science
         - Deep Dives
         - Deep Learning
@@ -122,6 +123,7 @@ plugins:
         - Nvidia Triton
         - ONNX Runtime
         - OpenAI Triton
+        - OpenAI Whisper
         - Programming
         - Python
         - Pytorch
