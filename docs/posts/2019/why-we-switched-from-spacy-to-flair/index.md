@@ -359,8 +359,7 @@ To reduce inference time 2 things have been performed:
 Vectorization is basically the process of replacing a for loop by a vector operation. The time reduction is because 2
 things, first you limit the need to exchange information between internal C of Numpy and Python side, the second is
 because Numpy works on continuous blocks of memory, and can make some computation optimization, including for instance
-[SIMD operations](https://github.com/numpy/numpy/blob/master/numpy/core/src/umath/simd.inc.src) (parallelization on 1
-CPU core).
+SIMD operations (parallelization on 1 CPU core).
 
 Another interesting optimization was to leverage broadcasting. During a computation, we need to add a vector to each
 column of a matrix. Before optimization, this vector was duplicated enough times to obtain the same shape as the matrix
