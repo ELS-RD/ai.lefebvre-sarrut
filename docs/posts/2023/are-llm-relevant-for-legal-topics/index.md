@@ -224,13 +224,13 @@ result and we averaged the results task by task.
 - **Summarization of the facts** - The main issue we faced was that the prompt was very long and that sometimes GPT3
   hallucinated or provided the summarization of the example instead of summarizing the right text. When we reduced the
   number of characters this problem was solved, but the summarization was less accurate.
-
+  <br>
   For sure, in the different approaches we tested, some facts were missing, some elements were irrelevant but globally
   it seems to be quite the same quality as a first-year student of average level.
 
 - **Finding the legal issue** - We tested three approaches to test the ability of LLM to find the legal issue for a
   practical legal use case, either with a lot a detailed text or with limited and more accurate text in entry.
-
+  <br>
   The results we got with GPT3 were not so good: only 45% of the results were relevant. For sure, the prompt can be
   improved, and we might expect better results for this kind of task. We’ll probably work on it in the coming weeks.
 
