@@ -215,7 +215,7 @@ with a lot a detailed text or with limited and more accurate text in entry.
 The instruction is the same for these three approaches: _“Identify the legal question asked by the facts and present it
 with clarity and precision.”_
 
-### Results of the tests with GPT3
+#### Results of the tests with GPT3
 
 In our tests, we decided to limit the experimentation to the first steps of the methodology: summarization of the facts
 and finding the legal issue. We tested only in French and for each task, we gave GPT3 three trials to find the right
