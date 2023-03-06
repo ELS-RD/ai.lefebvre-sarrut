@@ -34,8 +34,7 @@ European legal industry. As explained in
 precedent articles, our needs require us to apply deep learning on very large text datasets (legal case anonymization,
 document classification, etc.), that is why we are so interested in making all our (machine learning) tools much faster.
 
-In the spirit of
-a [precedent article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f),
+In the spirit of a [precedent article](../../2019/why-we-switched-from-spacy-to-flair/index.md),
 the purpose of this one is to explore 2 very simple optimizations which may
 significantly decrease training time on [Transformers](https://github.com/huggingface/transformers) library without
 negative effect on accuracy. We ran **21 experiments + 12 reproducibility experiments** on a large well-known NLP

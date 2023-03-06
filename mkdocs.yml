@@ -85,9 +85,11 @@ plugins:
         - Benchmarking
         - Kernl
         - Justice
+        - Large Language Models
         - Machine Learning
         - Optimization
         - Pytorch
+        - Quality test
         - Transformer-Deploy
         - Transformers
 
@@ -107,11 +109,15 @@ plugins:
   - tags:
       tags_file: tags.md
       tags_allowed:
+        - Anonymization
         - Bert
         - Cuda
+        - Cuda Graph
         - Data Science
         - Deep Dives
         - Deep Learning
+        - Flair
+        - GPT-3
         - GPU Quantization
         - Hugging Face
         - Justice
@@ -122,9 +128,11 @@ plugins:
         - Nvidia Triton
         - ONNX Runtime
         - OpenAI Triton
+        - OpenAI Whisper
         - Programming
         - Python
         - Pytorch
+        - Spacy
         - T5
         - Technology
         - TensorRT

@@ -27,7 +27,7 @@ Does (model) size matters?
 </figure>
 
 _This article is a continuation of a previous one about anonymizing of Courts of appeal
-decisions: [Why we switched from Spacy to Flair to anonymize French case law](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f)._
+decisions: [Why we switched from Spacy to Flair to anonymize French case law](../why-we-switched-from-spacy-to-flair/index.md)._
 
 [According to several worldwide machine learning experts](https://www.kdnuggets.com/2019/12/predictions-ai-machine-learning-data-science-research.html)
 like [Xavier](https://medium.com/u/dfc102dddf47?source=post_page-----d4ab01b2d4c3--------------------------------)
@@ -57,7 +57,7 @@ We tested 4 algorithms, 2 are Transformer based, 1 is bi-LSTM based, 1 has
 an [original architecture](https://www.kdnuggets.com/2019/12/predictions-ai-machine-learning-data-science-research.html):
 
 - [spaCy](https://medium.com/u/f6208eb7f56a?source=post_page-----d4ab01b2d4c3--------------------------------) v.2.2, this version introduces an interesting data augmentation mechanism similar to what we tried manually
-  in [our previous article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f),
+  in [our previous article](../why-we-switched-from-spacy-to-flair/index.md),
   does it work better?
 - [Flair](https://github.com/zalandoresearch/flair): bi-LSTM character-based model, it brought the highest scores last
   time, is this going to repeat again?
@@ -67,7 +67,7 @@ an [original architecture](https://www.kdnuggets.com/2019/12/predictions-ai-mach
   build such model when mBERT already supports French?
 
 > _We publish NER scores on commercial decisions. They should be **carefully** compared to those of
-the [previous article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f)
+the [previous article](../why-we-switched-from-spacy-to-flair/index.md)
 as the commercial court dataset is much harder to work on than the courts of appeal._
 > 
 > _If you are interested in this topic, follow me on Twitter: [https://twitter.com/pommedeterre33](https://twitter.com/pommedeterre33)_
@@ -356,7 +356,7 @@ commercial legal cases.
 </figure>
 
 We have described the nature of each type of entities in
-our [previous article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f).
+our [previous article](../why-we-switched-from-spacy-to-flair/index.md).
 If not yet read, to summarize, PERS entity mentions are people names and the most important entity type to find (they
 have to be anonymized), then come ADDRESS and ORGANIZATION.
 
@@ -398,7 +398,7 @@ on legal decisions. To help the algorithm, they randomly generate variation in t
 model more robust to this issue.
 
 According to our own experience described in
-our [previous article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f),
+our [previous article](../why-we-switched-from-spacy-to-flair/index.md),
 data augmentation was a nice strategy to increase NER scores.
 
 It is important to highlight that this model doesn’t suffer from any token quantity limit per sentence.
@@ -575,7 +575,7 @@ are moving in the same direction, and honestly I can’t wait for the result!
 <!--image is missing-->
 
 A discussion following
-our [previous article](https://towardsdatascience.com/why-we-switched-from-spacy-to-flair-to-anonymize-french-legal-cases-e7588566825f)
+our [previous article](../why-we-switched-from-spacy-to-flair/index.md)
 comparing Flair and spaCy
 
 To finish I want to thank **Sumi**, **Jonathan**, **Matthieu** (and its whole data team) and **Vincent** from Lefebvre
