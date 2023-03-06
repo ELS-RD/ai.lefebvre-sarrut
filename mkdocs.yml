@@ -85,9 +85,11 @@ plugins:
         - Benchmarking
         - Kernl
         - Justice
+        - Large Language Models
         - Machine Learning
         - Optimization
         - Pytorch
+        - Quality test
         - Transformer-Deploy
         - Transformers
 
@@ -115,6 +117,7 @@ plugins:
         - Deep Dives
         - Deep Learning
         - Flair
+        - GPT-3
         - GPU Quantization
         - Hugging Face
         - Justice

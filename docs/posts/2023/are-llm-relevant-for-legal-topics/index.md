@@ -2,12 +2,15 @@
 draft: true
 date: 2023-03-20
 authors:
-
 - vmaugeri
-
+categories:
+- Large Language Models
+- Quality test
+tags:
+- GPT-3
+links:
+- LLM quality checker: https://github.com/ELS-RD/llm-quality-checker
 ---
-
-[//]: # ([LLM quality checker]&#40;https://github.com/ELS-RD/llm-quality-checker&#41;)
 
 # Are LLM relevant for legal topics?
 
