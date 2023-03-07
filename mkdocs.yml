@@ -56,9 +56,9 @@ theme:
 
     - toc.follow
 
-    - content.code.copy # code copy button enabled globally
-    - content.code.annotate # code annotations enabled globally
-    - content.tabs.link
+    - content.code.copy       # code copy button enabled globally
+    - content.code.annotate   # code annotations enabled globally
+    - content.tabs.link       # all content tabs across the whole documentation site will be linked
     - content.tooltips
 
 # Plugins
