@@ -41,7 +41,6 @@ jobs:
       - run: pip install git+https://${{secrets.GH_TOKEN}}@github.com/squidfunk/mkdocs-material-insiders.git@9.0.12-insiders-4.30.2
       - run: pip install mkdocs-glightbox
       - run: pip install pillow cairosvg
-      - run: echo ${{CI_OPTIMIZATION}}
       - run: mkdocs build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
