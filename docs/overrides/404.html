@@ -12,3 +12,10 @@
     </div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+<!-- Add scripts that need to run before here -->
+{{ super() }}
+<!-- Add scripts that need to run afterwards here -->
+<script>plausible("404",{ props: { path: document.location.pathname } });</script>
+{% endblock %}
