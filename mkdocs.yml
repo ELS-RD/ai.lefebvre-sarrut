@@ -145,7 +145,7 @@ plugins:
   - meta
 
   - privacy:
-      enabled: !ENV [CI, false]
+      enabled: true
       external_assets_exclude:
         - cdn.jsdelivr.net/npm/mathjax@3/*
         - giscus.app/* # necessary for the functioning of giscus (404 error otherwise)
@@ -155,7 +155,7 @@ plugins:
       external_links_noopener: true
 
   - optimize:
-      enabled: !ENV [CI_OPTIMIZATION, false] # only run on ci (requires 3rd party libraries)
+      enabled: !ENV [CI, false] # only run on ci (requires 3rd party libraries)
 
 # Customization
 extra:
