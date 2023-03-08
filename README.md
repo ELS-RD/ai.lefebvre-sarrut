@@ -35,14 +35,14 @@ see [docker login](https://docs.docker.com/engine/reference/commandline/login/))
 
 ### About the **`CI`'s Environment variable**
 
-An environment variable `CI` is set to `true` when deploying continuously to Github pages. This variable allows a number
-of plugins to be run.
+An environment variable `CI` is set to `true` when deploying continuously to Github pages. This environment variable
+environment variable allows the activation of the `optimize` plugin (automatic image optimization).
 
 If you want the same behavior when running locally, you can set this variable to `true` by adding the `-e CI=true`
 option to the `docker run` command.
 
-> _The execution of the optimization plugin is also conditioned by another environment variable: `CI_OPTIMIZATION`. You
-can also run it locally, but this requires the installation of third party libraries (see documentation)._
+> _Note that other optimizations, like `external_assets_exclude`, are executed automatically, both locally and in
+continuous integration._
 
 ```shell
 # Building a Material for MkDocs docker image with the non built-in plugins
@@ -53,7 +53,7 @@ docker build -t mkdocs-material-insiders-plugins -f Dockerfile docs
 # Previewing the site in watch mode
 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs mkdocs-material-insiders-plugins
 
-# Previewing the site in watch mode with optimization plugins (images, external assets, etc.)
+# Previewing the site in watch mode with optimization plugins
 docker run --rm -it -p 8000:8000 -e CI=true -v ${PWD}:/docs mkdocs-material-insiders-plugins
 ```
 
@@ -61,7 +61,7 @@ docker run --rm -it -p 8000:8000 -e CI=true -v ${PWD}:/docs mkdocs-material-insi
 # Build the static site
 docker run --rm -it -v ${PWD}:/docs mkdocs-material-insiders-plugins build
 
-# Build the static site with optimization plugins (images, external assets, etc.)
+# Build the static site with optimization plugins
 docker run --rm -it -e CI=true -v ${PWD}:/docs mkdocs-material-insiders-plugins build
 ```
 
