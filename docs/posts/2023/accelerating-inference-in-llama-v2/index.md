@@ -1,3 +1,16 @@
+---
+draft: true
+date: 2023-07-20
+authors:
+- mbenesty
+categories:
+- Kernl
+- Large Language Models
+tags:
+- Kernel
+- Llama
+---
+
 # Deep Dive into Kernel Fusion: Accelerating Inference in Llama V2
 
 Llama, the most widely discussed machine learning model in 2023, has recently received an upgrade with the release of Llama V2. Its new licensing terms have sparked significant excitement in the field, reaffirming its position at the forefront of the local model run movement. This movement emphasizes low-level optimizations, with a particular focus on platforms like MacBook Pro, evidenced by the [llama.cpp](https://github.com/ggerganov/llama.cpp) project and numerous published quantization schemes. Like its contemporaries, Llama V2's design rests on the Transformer architecture. However, its distinct attributes include the use of Rotary Positional Embeddings (RoPE) over conventional positional encoding, RMSNorm replacing LayerNorm, and the integration of the SILU function in the feed-forward components.
