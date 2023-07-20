@@ -42,9 +42,9 @@ The following content has been revised to include numbers relevant to llama V2.
 Our first action was to profile the model with Nvidia Nsight, specifically focusing on the generation of a single
 token (and batch=1). To our surprise, the results were unexpected:
 
-TODO TODO REPLACE
-
-![](RackMultipart20230720-1-i6rvh6_html_86132150068939de.png)
+<figure markdown>
+  ![Memory footprint](layer-17.png){ width="100%", loading=lazy }
+</figure>
 
 In our investigation, we noticed that two specific transformations - the Rotary Positional Embeddings (RoPE) and
 RMSNorm - were taking up an unusually high amount of processing time. This came as a surprise because these operations
