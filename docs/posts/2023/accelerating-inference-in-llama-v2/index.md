@@ -525,4 +525,4 @@ For very large batches, it might be beneficial not to fuse matmul and RMSNorm as
 
 It has been observed that the fusion does not affect perplexity (as expected). However, the use of Flash Attention does have a minor impact on perplexity. In this project, Flash Attention is only utilized in the FP8 scenario. This could be attributable to a bug in our FA kernel implementation. We have implemented both the vanilla Triton and our own custom version specific to Llama, both lead to the same issue. Alternatively, it might not be a bug at all, but rather an instance of catastrophic cancelling at play. We didn't investigate this in depth as our primary aim was to test the FP8 format and its impact on speed.
 
-Support of AMD GPUs in Triton brought some CPU overhead, for now it has not been fixed and those experiments has been ran the commit [69a806c](https://github.com/openai/triton/tree/69a806c745aa604fec6bd317628d3dc293aa1e46).
+Support of AMD GPUs in Triton brought some CPU overhead, for now it has not been fixed and those experiments has been ran on top of the commit [69a806c](https://github.com/openai/triton/tree/69a806c745aa604fec6bd317628d3dc293aa1e46).
