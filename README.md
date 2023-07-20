@@ -33,6 +33,11 @@ The easiest and least intrusive way is to use docker.
 You **need to be logged** in to github to pull the image (
 see [docker login](https://docs.docker.com/engine/reference/commandline/login/)).
 
+```shell
+# example
+cat my_password.txt | docker login --username name --password-stdin https://github.com/ELS-RD/ai.lefebvre-sarrut
+```
+
 ### About the **`CI`'s Environment variable**
 
 An environment variable `CI` is set to `true` when deploying continuously to Github pages. This environment variable
