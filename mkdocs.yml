@@ -122,6 +122,7 @@ plugins:
         - Hugging Face
         - Justice
         - Kernel
+        - Llama
         - Machine Learning
         - NLP
         - Notes From Industry
