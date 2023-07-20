@@ -262,8 +262,8 @@ def rbe_triton(x_ptr, out_ptr,
 ```
 
 In Triton, we compose a program designed for concurrent execution - the raison d'être for leveraging GPUs in the first
-place. Triton operates on a lower level compared to PyTorch; while PyTorch abstracts most of global memory management (
-there are mechanisms like garbage collection, a memory pool, etc.), Triton allows for explicit control, enabling the
+place. Triton operates on a lower level compared to PyTorch; while PyTorch abstracts most of global memory management 
+(there are mechanisms like garbage collection, a memory pool, etc.), Triton allows for explicit control, enabling the
 user to directly manipulate the global memory addresses associated with specific sections of one or more tensors.
 Usually we work on a part of a tensor, called a "Tile" (this name is often used in gemm/matmul context). Yet, Triton
 also sits a notch above CUDA by automating certain aspects of memory management, such as transferring data between
@@ -277,8 +277,8 @@ with latency in the tens of cycles) so we can manipulate them.
 
 In the aforementioned program, we commence by determining the position of the start of the data block we will be
 operating on based on the program id (pid). Subsequently, we must determine which portion of the tensor we specifically
-require. For this purpose, we manipulate the addresses in a way where we load even and odd dimensions independently (
-into two different tensors named "real" and "imag"). This data transfer is crucial.
+require. For this purpose, we manipulate the addresses in a way where we load even and odd dimensions independently 
+(into two different tensors named "real" and "imag"). This data transfer is crucial.
 
 ```python
 @triton.jit
@@ -585,9 +585,8 @@ and data transfers, and therefore speed up the total program execution considera
 
 [this part has only been tried on llama 1, implementation for llama 2 will come later as we need to adapt Flash attention kernel]
 
-In a significant move in 2022, Nvidia, Intel, and ARM collectively declared their endorsement for a unified FP8 format (
-read more
-here:[https://developer.nvidia.com/blog/nvidia-arm-and-intel-publish-fp8-specification-for-standardization-as-an-interchange-format-for-ai/](https://developer.nvidia.com/blog/nvidia-arm-and-intel-publish-fp8-specification-for-standardization-as-an-interchange-format-for-ai/)).
+In a significant move in 2022, Nvidia, Intel, and ARM collectively declared their endorsement for a unified FP8 format (read more
+here: [https://developer.nvidia.com/blog/nvidia-arm-and-intel-publish-fp8-specification-for-standardization-as-an-interchange-format-for-ai/](https://developer.nvidia.com/blog/nvidia-arm-and-intel-publish-fp8-specification-for-standardization-as-an-interchange-format-for-ai/)).
 
 This data type introduces two distinct variants: E4M3 and E5M2, featuring a 4-bit exponent coupled with a 3-bit
 mantissa, and a 5-bit exponent partnered with a 2-bit mantissa, respectively. To clarify, the exponent determines the
