@@ -9,9 +9,13 @@ categories:
 tags:
 - Kernel
 - Llama
+links:
+  - Project code: https://github.com/ELS-RD/kernl/tree/main/experimental/llama-v2
 ---
 
 # Deep Dive into Kernel Fusion: Accelerating Inference in Llama V2
+
+_Project code is available [here]: (https://github.com/ELS-RD/kernl/tree/main/experimental/llama-v2)_ 
 
 Llama, the most widely discussed machine learning model in 2023, has recently received an upgrade with the release of
 Llama V2. Its new licensing terms have sparked significant excitement in the field, reaffirming its position at the
